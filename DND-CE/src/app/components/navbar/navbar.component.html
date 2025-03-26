@@ -1,0 +1,27 @@
+<!-- Header / Navbar -->
+<header class="navbar">
+    <div class="hamburger" (click)="toggleMenu()">&#9776;</div>
+    <div class="logo">MyApp</div>
+  </header>
+  
+  <!-- Offcanvas Sidebar -->
+  <div class="offcanvas" [class.open]="menuOpen">
+    <div class="offcanvas-content">
+      <!-- Close Button -->
+      <button class="close-btn" (click)="closeMenu()">×</button>
+  
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+        <li><a routerLink="/characterSheet" (click)="closeMenu()">Character Sheet</a></li>
+        <li><a routerLink="/search" (click)="closeMenu()">Search</a></li>
+        <li><a routerLink="/combatTracker" (click)="closeMenu()">Combat Tracker</a></li>
+        <li><a routerLink="/dice" (click)="closeMenu()">Dice</a></li>
+        <li><a routerLink="/setting" (click)="closeMenu()">Setting</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Overlay (optional, for better UX) -->
+  <div class="overlay" *ngIf="menuOpen" (click)="closeMenu()"></div>
+  
