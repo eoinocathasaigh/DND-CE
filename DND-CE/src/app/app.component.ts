@@ -18,6 +18,6 @@ export class AppComponent {
 
   ngOnInit() {
     //Automatically routing the user to the home page when they boot up the app
-    this.router.navigate(['home']);
+    this.router.navigate(['/']);
   }
 }
