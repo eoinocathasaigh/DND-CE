@@ -6,6 +6,7 @@ import { DiceComponent } from './components/dice/dice.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { CreateCombatComponent } from './components/create-combat/create-combat.component';
 import { PlayCombatComponent } from './components/play-combat/play-combat.component';
+import { SearchComponent } from './components/search/search.component';
 
 export const routes: Routes = [
     {path: "", component: HomeComponent},
@@ -14,5 +15,6 @@ export const routes: Routes = [
     {path: "createCombat", component: CreateCombatComponent},
     {path: "playCombat", component: PlayCombatComponent},
     {path: "dice", component: DiceComponent},
-    {path: "settings", component: SettingsComponent}
+    {path: "settings", component: SettingsComponent},
+    {path: "search", component: SearchComponent}
 ];

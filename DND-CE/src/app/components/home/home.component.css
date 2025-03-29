@@ -1,0 +1,33 @@
+.appIntro {
+    text-align: center;
+    background-color: red;
+    margin: auto;
+    max-width: 500px;
+    border: 5px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.mainBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url('https://www.dndspeak.com/wp-content/uploads/2022/02/art-city-town-paint-painting-fantastic-deviantart-fantasy-wo.jpg');
+}
+
+.titleContainer {
+    background-color: white;
+    border: 5px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.logoImage {
+    width: 300px;
+    margin: 0 auto;
+    display: block;
+}
