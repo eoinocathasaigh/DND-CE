@@ -1,30 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!-- Hamburger Menu (Left Side) -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <!-- Navbar Title (Centered) -->
-    <div class="collapse navbar-collapse justify-content-center">
-      <span class="navbar-text text-Dark">DND-CE</span>
-    </div>
-  </nav>
-  
-  <!-- Offcanvas Sidebar -->
-  <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasSidebarLabel">Menu</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <ul class="nav flex-column">
-        <li class="nav-item"><a class="nav-link text-white" href="/" (click)="closeMenu()">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="/character" (click)="closeMenu()">Character Sheet</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="/search" (click)="closeMenu()">Search</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="/combat" (click)="closeMenu()">Combat Tracker</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="/dice" (click)="closeMenu()">Dice</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="/settings" (click)="closeMenu()">Settings</a></li>
-      </ul>
-    </div>
-  </div>
-  
+<!-- Sidebar Menu -->
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>DND-CE</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item button href="/">Home</ion-item>
+      <ion-item button href="/character">Character Sheet</ion-item>
+      <ion-item button href="/search">Search</ion-item>
+      <ion-item button href="/combat">Combat Tracker</ion-item>
+      <ion-item button href="/dice">Dice</ion-item>
+      <ion-item button href="/settings">Settings</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Main Content with Navbar -->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</div>

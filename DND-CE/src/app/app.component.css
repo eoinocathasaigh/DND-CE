@@ -1,3 +1,7 @@
 /* General css */
 /* I don't know why but it need to be greater than 1px 
-*{ margin: 1px; }*/
+*{ margin: 1px; }
+
+ion-content {
+  z-index: 9999;
+}*/
