@@ -1,5 +1,5 @@
 # Welcome to the DND-CD!
-This Project been made Angular, Node.js for the Front-End and Mongodb for the Database.
+This Project been made Angular, Node.js and Ionic for the Front-End and Mongodb for the Database.
 ## First Download the Project
 ### To Run the Program will be run on the Command Line <br>
 * Open the Project Folder and Open the Command Line <br>
