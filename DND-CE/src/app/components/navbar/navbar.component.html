@@ -1,27 +1,30 @@
-<!-- Header / Navbar -->
-<header class="navbar">
-    <div class="hamburger" (click)="toggleMenu()">&#9776;</div>
-    <div class="logo"><h2>DND-CE</h2></div>
-  </header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Hamburger Menu (Left Side) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Navbar Title (Centered) -->
+    <div class="collapse navbar-collapse justify-content-center">
+      <span class="navbar-text text-Dark">DND-CE</span>
+    </div>
+  </nav>
   
   <!-- Offcanvas Sidebar -->
-  <div class="offcanvas" [class.open]="menuOpen">
-    <div class="offcanvas-content">
-      <!-- Close Button -->
-      <button class="close-btn" (click)="closeMenu()">×</button>
-  
-      <!-- Navigation Links -->
-      <ul class="nav-links">
-        <li><a href="/" (click)="closeMenu()">Home</a></li>
-        <li><a href="/character" (click)="closeMenu()">Character Sheet</a></li>
-        <li><a href="/search" (click)="closeMenu()">Search</a></li>
-        <li><a href="/combat" (click)="closeMenu()">Combat Tracker</a></li>
-        <li><a href="/dice" (click)="closeMenu()">Dice</a></li>
-        <li><a href="/settings" (click)="closeMenu()">Settings</a></li>
+  <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasSidebarLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link text-white" href="/" (click)="closeMenu()">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="/character" (click)="closeMenu()">Character Sheet</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="/search" (click)="closeMenu()">Search</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="/combat" (click)="closeMenu()">Combat Tracker</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="/dice" (click)="closeMenu()">Dice</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="/settings" (click)="closeMenu()">Settings</a></li>
       </ul>
     </div>
   </div>
-  
-  <!-- Overlay (optional, for better UX) -->
-  <div class="overlay" *ngIf="menuOpen" (click)="closeMenu()"></div>
   
