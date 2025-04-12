@@ -1,0 +1,12 @@
+/* add character button */
+.add-character-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    --background: #DC3939;
+    --background-hover: #c53232;
+    --color: white;
+    --border-radius: 8px;
+}
+  

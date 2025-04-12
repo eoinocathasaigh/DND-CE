@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonButtons, IonTitle, IonMenuButton, IonContent, IonFab, IonFabButton, IonIcon } from "@ionic/angular/standalone";
+import { Router } from '@angular/router';
+import { IonContent, IonIcon, IonButton } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-character',
-  imports: [IonIcon, IonFabButton, IonFab, IonContent, IonTitle, IonButtons, IonToolbar, IonHeader, IonMenuButton],
+  imports: [IonButton, IonIcon, IonContent],
   templateUrl: './character.component.html',
   styleUrl: './character.component.css'
 })
 export class CharacterComponent {
+  constructor(private router: Router) {}
 
-  onClick() {
-    console.log('Button clicked!');
+  goToCharacterSheetMaker() {
+    this.router.navigate(['/character-sheet-maker']);
   }
 }

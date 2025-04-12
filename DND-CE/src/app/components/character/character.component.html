@@ -2,10 +2,12 @@
 
   <!-- characters will be display here -->
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="onClick()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+
+  <!-- make new characters  -->
+  <ion-button class="add-character-btn" (click)="goToCharacterSheetMaker()">
+    <ion-icon slot="start" name="document"></ion-icon>
+    Add Character
+  </ion-button>
+  
 
 </ion-content>  
