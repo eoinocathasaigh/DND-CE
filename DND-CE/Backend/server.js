@@ -17,33 +17,31 @@ app.use(function (req, res, next) {
 });
 
 // MongoDB Connection
-mongoose.connect('mongodb+srv://dnduser:dndpass@dndcluster.xlb2uao.mongodb.net/?retryWrites=true&w=majority&appName=DNDCluster'
-, {
+mongoose.connect('mongodb+srv://dnduser:dndpass@dndcluster.xlb2uao.mongodb.net/combatInfo?retryWrites=true&w=majority', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
 })
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('MongoDB connection error:', err));
 
 //COMBAT TRACKING SCHEMAS
 //This schema defines the attributes/elements of a fighter
+// Fighter Schema
 const fighterSchema = new mongoose.Schema({
-    type: String,
-    hp: Number,
-    initiative: Number,
+    name: String, // Fighter's name
+    hp: Number,   // Fighter's health points
+    initiative: Number, // Fighter's initiative
 });
 
-//This schema defines the attributes for combat encounters themselves
+// Encounter Schema
 const encounterSchema = new mongoose.Schema({
-    //Give them a name
-    name: String,
-    //Then initialize the fighters that are apart of the particular encounter
-    fighters: [fighterSchema],
+    name: String, // Encounter name
+    image: String, // Optional image for the encounter
+    fighters: [fighterSchema], // Array of fighters
 });
 
-// Define Models
-const CombatModel = mongoose.model('combatData', encounterSchema);
-
+// Define Model
+const CombatModel = mongoose.model('combatData', encounterSchema); // Use 'combatData' as the collection name
 //API endpoints
 // Get all combat encounters
 app.get('/api/CombatTracker', async (req, res) => {
