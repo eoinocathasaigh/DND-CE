@@ -1,3 +1,68 @@
-<p>
-  character-sheet-maker works!
-</p>
+<ion-content class="ion-padding">
+  <form [formGroup]="characterForm" (ngSubmit)="onSubmit()">
+
+    <!-- Basic Info -->
+    <ion-item><ion-label position="floating">Name</ion-label><ion-input formControlName="name"></ion-input></ion-item>
+    <ion-item><ion-label position="floating">Race</ion-label><ion-input formControlName="race"></ion-input></ion-item>
+    <ion-item><ion-label position="floating">Class</ion-label><ion-input formControlName="class"></ion-input></ion-item>
+    <ion-item><ion-label position="floating">Level</ion-label><ion-input type="number" formControlName="level"></ion-input></ion-item>
+    <ion-item><ion-label position="floating">Alignment</ion-label><ion-input formControlName="alignment"></ion-input></ion-item>
+
+    <!-- Stats -->
+    <ion-list-header>Stats</ion-list-header>
+    <div formGroupName="stats">
+      <ion-item><ion-label position="floating">Strength</ion-label><ion-input type="number" formControlName="strength"></ion-input></ion-item>
+      <ion-item><ion-label position="floating">Dexterity</ion-label><ion-input type="number" formControlName="dexterity"></ion-input></ion-item>
+      <ion-item><ion-label position="floating">Constitution</ion-label><ion-input type="number" formControlName="constitution"></ion-input></ion-item>
+      <ion-item><ion-label position="floating">Intelligence</ion-label><ion-input type="number" formControlName="intelligence"></ion-input></ion-item>
+      <ion-item><ion-label position="floating">Wisdom</ion-label><ion-input type="number" formControlName="wisdom"></ion-input></ion-item>
+      <ion-item><ion-label position="floating">Charisma</ion-label><ion-input type="number" formControlName="charisma"></ion-input></ion-item>
+    </div>
+
+    <!-- Proficiencies -->
+    <ion-list-header>Proficiencies</ion-list-header>
+    <div formArrayName="proficiencies">
+      <div *ngFor="let prof of proficiencies.controls; let i = index">
+        <ion-item>
+          <ion-input [formControlName]="i" placeholder="Proficiency"></ion-input>
+          <ion-button fill="clear" color="danger" (click)="removeItem(proficiencies, i)">Remove</ion-button>
+        </ion-item>
+      </div>
+      <ion-button expand="block" (click)="addItem(proficiencies)">+ Add Proficiency</ion-button>
+    </div>
+
+    <!-- Inventory -->
+    <ion-list-header>Inventory</ion-list-header>
+    <div formArrayName="inventory">
+      <div *ngFor="let item of inventory.controls; let i = index">
+        <ion-item>
+          <ion-input [formControlName]="i" placeholder="Item"></ion-input>
+          <ion-button fill="clear" color="danger" (click)="removeItem(inventory, i)">Remove</ion-button>
+        </ion-item>
+      </div>
+      <ion-button expand="block" (click)="addItem(inventory)">+ Add Item</ion-button>
+    </div>
+
+    <!-- Spells -->
+    <ion-list-header>Spells</ion-list-header>
+    <div formArrayName="spells">
+      <div *ngFor="let spell of spells.controls; let i = index">
+        <ion-item>
+          <ion-input [formControlName]="i" placeholder="Spell"></ion-input>
+          <ion-button fill="clear" color="danger" (click)="removeItem(spells, i)">Remove</ion-button>
+        </ion-item>
+      </div>
+      <ion-button expand="block" (click)="addItem(spells)">+ Add Spell</ion-button>
+    </div>
+
+    <!-- Backstory -->
+    <ion-item>
+      <ion-label position="floating">Backstory</ion-label>
+      <ion-textarea formControlName="backstory"></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="characterForm.invalid">
+      Save Character
+    </ion-button>
+  </form>
+</ion-content>
