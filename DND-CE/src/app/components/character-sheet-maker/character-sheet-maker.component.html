@@ -3,21 +3,118 @@
 
     <!-- Basic Info -->
     <ion-item><ion-label position="floating">Name</ion-label><ion-input formControlName="name"></ion-input></ion-item>
+    <ion-item><ion-label position="floating">Image</ion-label><ion-input formControlName="img"></ion-input></ion-item>
+    <!-- Image Preview -->
+    <div *ngIf="characterForm.get('img')?.value">
+      <img [src]="characterForm.get('img')?.value" alt="Character Image" style="width: 100%; max-height: 200px; object-fit: contain; margin: 1em 0;" />
+    </div>
     <ion-item><ion-label position="floating">Race</ion-label><ion-input formControlName="race"></ion-input></ion-item>
     <ion-item><ion-label position="floating">Class</ion-label><ion-input formControlName="class"></ion-input></ion-item>
     <ion-item><ion-label position="floating">Level</ion-label><ion-input type="number" formControlName="level"></ion-input></ion-item>
     <ion-item><ion-label position="floating">Alignment</ion-label><ion-input formControlName="alignment"></ion-input></ion-item>
 
+    <!-- Combat Info -->
+<ion-list-header>Combat Info</ion-list-header>
+
+<ion-item>
+  <ion-label position="floating">Armor Class</ion-label>
+  <ion-input type="number" formControlName="armorClass"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">Initiative</ion-label>
+  <ion-input type="number" formControlName="initiative"></ion-input>
+</ion-item>
+<ion-text color="danger" *ngIf="characterForm.get('initiative')?.invalid && characterForm.get('initiative')?.touched">
+  Value must be between -20 and 20
+</ion-text>
+
+<ion-item>
+  <ion-label position="floating">Speed</ion-label>
+  <ion-input type="number" formControlName="speed"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">Proficiency Bonus</ion-label>
+  <ion-input type="number" formControlName="proficiencyBonus"></ion-input>
+</ion-item>
+<ion-text color="danger" *ngIf="characterForm.get('proficiencyBonus')?.invalid && characterForm.get('proficiencyBonus')?.touched">
+  Value must be between 1 and 10
+</ion-text>
+
+<ion-item>
+  <ion-label position="floating">Hit Points</ion-label>
+  <ion-input type="number" formControlName="hitPoints"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">Hit Dice</ion-label>
+  <ion-input formControlName="hitDice"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">Max HP</ion-label>
+  <ion-input type="number" formControlName="hitPointMax"></ion-input>
+</ion-item>
+
     <!-- Stats -->
     <ion-list-header>Stats</ion-list-header>
     <div formGroupName="stats">
-      <ion-item><ion-label position="floating">Strength</ion-label><ion-input type="number" formControlName="strength"></ion-input></ion-item>
-      <ion-item><ion-label position="floating">Dexterity</ion-label><ion-input type="number" formControlName="dexterity"></ion-input></ion-item>
-      <ion-item><ion-label position="floating">Constitution</ion-label><ion-input type="number" formControlName="constitution"></ion-input></ion-item>
-      <ion-item><ion-label position="floating">Intelligence</ion-label><ion-input type="number" formControlName="intelligence"></ion-input></ion-item>
-      <ion-item><ion-label position="floating">Wisdom</ion-label><ion-input type="number" formControlName="wisdom"></ion-input></ion-item>
-      <ion-item><ion-label position="floating">Charisma</ion-label><ion-input type="number" formControlName="charisma"></ion-input></ion-item>
+      <!-- Strength -->
+      <ion-item>
+        <ion-label position="floating">Strength</ion-label>
+        <ion-input type="number" formControlName="strength"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="characterForm.get('stats.strength')?.invalid && characterForm.get('stats.strength')?.touched">
+        Value must be between 1 and 20
+      </ion-text>
+
+      <!-- Dexterity -->
+      <ion-item>
+        <ion-label position="floating">Dexterity</ion-label>
+        <ion-input type="number" formControlName="dexterity"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="characterForm.get('stats.dexterity')?.invalid && characterForm.get('stats.dexterity')?.touched">
+        Value must be between 1 and 20
+      </ion-text>
+
+      <!-- Constitution -->
+      <ion-item>
+        <ion-label position="floating">Constitution</ion-label>
+        <ion-input type="number" formControlName="constitution"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="characterForm.get('stats.constitution')?.invalid && characterForm.get('stats.constitution')?.touched">
+        Value must be between 1 and 20
+      </ion-text>
+
+      <!-- Intelligence -->
+      <ion-item>
+        <ion-label position="floating">Intelligence</ion-label>
+        <ion-input type="number" formControlName="intelligence"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="characterForm.get('stats.intelligence')?.invalid && characterForm.get('stats.intelligence')?.touched">
+        Value must be between 1 and 20
+      </ion-text>
+
+      <!-- Wisdom -->
+      <ion-item>
+        <ion-label position="floating">Wisdom</ion-label>
+        <ion-input type="number" formControlName="wisdom"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="characterForm.get('stats.wisdom')?.invalid && characterForm.get('stats.wisdom')?.touched">
+        Value must be between 1 and 20
+      </ion-text>
+
+      <!-- Charisma -->
+      <ion-item>
+        <ion-label position="floating">Charisma</ion-label>
+        <ion-input type="number" formControlName="charisma"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="characterForm.get('stats.charisma')?.invalid && characterForm.get('stats.charisma')?.touched">
+        Value must be between 1 and 20
+      </ion-text>
     </div>
+
 
     <!-- Proficiencies -->
     <ion-list-header>Proficiencies</ion-list-header>

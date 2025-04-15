@@ -115,10 +115,18 @@ app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`)
 // character 
 const characterSchema = new mongoose.Schema({
   name: String,
+  img: String,
   race: String,
   class: String,
   level: Number,
   alignment: String,
+  armorClass: Number,
+  initiative: Number,
+  speed: Number,
+  proficiencyBonus: Number,
+  hitPoints: Number,
+  hitDice: String,
+  hitPointMax: Number,
   stats: {
     strength: Number,
     dexterity: Number,
@@ -148,6 +156,7 @@ app.get('/api/character', async (req, res) => {
 
 // Add a new character
 app.post('/api/character', async (req, res) => {
+    console.log('debug: ', req.body); // Debugging line to check the request body
     try {
         const characterData = req.body; // Getting the form data
         const newCharacter = new characterModel(characterData); // Create a new character

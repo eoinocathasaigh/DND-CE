@@ -1,33 +1,41 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core'; 
 import { FormBuilder, FormGroup, Validators, FormArray, ReactiveFormsModule  } from '@angular/forms';
-import { IonButton, IonTextarea, IonLabel, IonItem, IonListHeader, IonInput, IonContent } from "@ionic/angular/standalone";
+import { IonButton, IonTextarea, IonLabel, IonItem, IonListHeader, IonInput, IonContent, IonText } from "@ionic/angular/standalone";
 import { CharacterService } from '../../services/character.service'; 
 
 @Component({
   selector: 'app-character-create',
   templateUrl: './character-sheet-maker.component.html',
-  imports: [CommonModule, ReactiveFormsModule, IonContent, IonInput, IonListHeader, IonItem, IonListHeader, IonInput, IonTextarea, IonButton, IonButton, IonContent, IonItem, IonLabel],
+  imports: [IonText, CommonModule, ReactiveFormsModule, IonContent, IonInput, IonListHeader, IonItem, IonListHeader, IonInput, IonTextarea, IonButton, IonButton, IonContent, IonItem, IonLabel],
 
   styleUrls: ['./character-sheet-maker.component.css'],
 })
 export class CharacterSheetMakerComponent {
   characterForm: FormGroup;
-
+  
   constructor(private fb: FormBuilder, private characterService: CharacterService) {
     this.characterForm = this.fb.group({
       name: ['', Validators.required],
+      img: [''],
       race: ['', Validators.required],
       class: ['', Validators.required],
       level: [1, [Validators.required, Validators.min(1)]],
       alignment: ['', Validators.required],
+      armorClass: [10, [Validators.required, Validators.min(1)]],
+      initiative: [0, [Validators.required, Validators.min(-20), Validators.max(20)]],
+      speed: [30, [Validators.required, Validators.min(1)]],
+      proficiencyBonus: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
+      hitPoints: [10, [Validators.required, Validators.min(1)]],
+      hitDice: ['1d10', Validators.required],
+      hitPointMax: [10, [Validators.required, Validators.min(1)]],
       stats: this.fb.group({
-        strength: [10, [Validators.required]],
-        dexterity: [10, [Validators.required]],
-        constitution: [10, [Validators.required]],
-        intelligence: [10, [Validators.required]],
-        wisdom: [10, [Validators.required]],
-        charisma: [10, [Validators.required]],
+        strength: [10, [Validators.required, Validators.min(1), Validators.max(20)]],
+        dexterity: [10, [Validators.required, Validators.min(1), Validators.max(20)]],
+        constitution: [10, [Validators.required, Validators.min(1), Validators.max(20)]],
+        intelligence: [10, [Validators.required, Validators.min(1), Validators.max(20)]],
+        wisdom: [10, [Validators.required, Validators.min(1), Validators.max(20)]],
+        charisma: [10, [Validators.required, Validators.min(1), Validators.max(20)]],
       }),
       proficiencies: this.fb.array([]),
       inventory: this.fb.array([]),
@@ -61,7 +69,7 @@ export class CharacterSheetMakerComponent {
     if (this.characterForm.valid) {
       const characterData = this.characterForm.value;
 
-      this.characterService.getCharacter(characterData).subscribe(
+      this.characterService.addCharacter(characterData).subscribe(
         (response) => {
           console.log('Character created successfully!', response);
           // Maybe show a success message or reset the form here
