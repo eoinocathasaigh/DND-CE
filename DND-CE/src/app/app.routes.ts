@@ -10,13 +10,16 @@ import { SearchComponent } from './components/search/search.component';
 import { CharacterSheetMakerComponent } from './components/character-sheet-maker/character-sheet-maker.component';
 
 export const routes: Routes = [
-    {path: "", component: HomeComponent},
-    {path: "character", component: CharacterComponent},
-    {path: "combat", component: CombatComponent},
-    {path: "createCombat", component: CreateCombatComponent},
-    {path: "playCombat", component: PlayCombatComponent},
-    {path: "dice", component: DiceComponent},
-    {path: "settings", component: SettingsComponent},
-    {path: "search", component: SearchComponent},
-    {path: 'character-sheet-maker', component: CharacterSheetMakerComponent}
+    { path: "", component: HomeComponent },
+    { path: "character", component: CharacterComponent },
+    { path: "combat", component: CombatComponent },
+    { path: "createCombat", component: CreateCombatComponent },
+    { path: "dice", component: DiceComponent },
+    { path: "settings", component: SettingsComponent },
+    { path: "search", component: SearchComponent },
+    { path: 'character-sheet-maker', component: CharacterSheetMakerComponent },
+    {
+        path: 'play-encounter/:id',
+        component: PlayCombatComponent
+    }
 ];

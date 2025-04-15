@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http'; // Ensure HttpClientModule is imported
+import { Router } from '@angular/router';
 import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonImg, IonList, IonText, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { CombatService } from '../../services/combat.service';
 
@@ -10,7 +10,6 @@ import { CombatService } from '../../services/combat.service';
   imports: [
     CommonModule,
     RouterLink,
-    HttpClientModule, // Ensure HttpClientModule is imported
     IonHeader,
     IonButton,
     IonCardContent,
@@ -31,7 +30,7 @@ export class CombatComponent implements OnInit {
   loading: boolean = true; // To show a loading spinner
   error: string | null = null; // To handle errors
 
-  constructor(private combatService: CombatService) {}
+  constructor(private combatService: CombatService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadEncounters();
@@ -55,16 +54,16 @@ export class CombatComponent implements OnInit {
     );
   }
 
-  // Play encounter (placeholder for now)
-  playEncounter(id: string): void {
-    console.log(`Play encounter with ID: ${id}`);
+  // Play encounter
+  playEncounter(encounterId: string) {
+    // Navigate to the play encounter page
+    this.router.navigate(['/playCombat/' + encounterId, encounterId]);
   }
 
   // Delete an encounter
   deleteEncounter(id: string): void {
     this.combatService.deleteCombatEncounter(id).subscribe({
       next: () => {
-        console.log(`Encounter with ID ${id} deleted successfully.`);
         this.loadEncounters(); // Reload encounters after deletion
       },
       error: (err) => {

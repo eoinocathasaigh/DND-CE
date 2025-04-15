@@ -53,6 +53,20 @@ app.get('/api/CombatTracker', async (req, res) => {
     }
 });
 
+app.get('/api/CombatTracker/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const encounter = await CombatModel.findById(id);
+      if (!encounter) {
+        return res.status(404).json({ message: 'Encounter not found' });
+      }
+      res.status(200).json(encounter);
+    } catch (error) {
+      console.error('Error fetching encounter:', error);
+      res.status(500).json({ message: 'Error fetching encounter', error });
+    }
+  });
+
 // Add a new combat encounter
 app.post('/api/CombatTracker', async (req, res) => {
     try {
@@ -79,6 +93,20 @@ app.put('/api/CombatTracker/:id', async (req, res) => {
         res.status(500).json({ message: 'Error updating combat encounter', error });
     }
 });
+
+app.put('/api/CombatTracker/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updatedEncounter = await CombatModel.findByIdAndUpdate(id, req.body, { new: true });
+      if (!updatedEncounter) {
+        return res.status(404).json({ message: 'Encounter not found' });
+      }
+      res.status(200).json(updatedEncounter);
+    } catch (error) {
+      console.error('Error updating encounter:', error);
+      res.status(500).json({ message: 'Error updating encounter', error });
+    }
+  });
 
 // Delete a combat encounter
 app.delete('/api/CombatTracker/:id', async (req, res) => {

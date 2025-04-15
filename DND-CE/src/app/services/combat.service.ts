@@ -21,6 +21,10 @@ export class CombatService {
   }
 
   //Update an existing combat encounter
+  getCombatEncounterById(id: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+  
   updateCombatEncounter(id: string, encounter: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/${id}`, encounter);
   }

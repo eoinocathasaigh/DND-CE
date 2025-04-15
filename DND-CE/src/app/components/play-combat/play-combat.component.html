@@ -1,1 +1,58 @@
-<p>play-combat works!</p>
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-title>Playing Encounter</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ name }}</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Edit Encounter Name</ion-label>
+          <ion-input [(ngModel)]="name"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Add Fighter</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Type</ion-label>
+          <ion-input [(ngModel)]="type"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">HP</ion-label>
+          <ion-input type="number" [(ngModel)]="hp"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Initiative</ion-label>
+          <ion-input type="number" [(ngModel)]="initiative"></ion-input>
+        </ion-item>
+        <ion-button expand="block" (click)="addFighter()">Add Fighter</ion-button>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card *ngIf="fighters.length">
+      <ion-card-header>
+        <ion-card-title>Fighters (Sorted by Initiative)</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let fighter of getSortedFighters()">
+            {{ fighter.type }} - Initiative: {{ fighter.initiative }}, HP: {{ fighter.hp }}
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-button expand="block" color="success" (click)="saveEncounter()">Save Encounter</ion-button>
+  </ion-content>
+  

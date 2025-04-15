@@ -25,9 +25,7 @@
       </ion-card-header>
       <ion-card-content>
         <img [src]="encounter.image" alt="{{encounter.name}}" style="width: 100%; border-radius: 8px;"/>
-        <ion-button color="primary" expand="block" (click)="playEncounter(encounter._id)">
-          Play Encounter
-        </ion-button>
+        <ion-button [routerLink]="['/play-encounter', encounter._id]">Play Encounter</ion-button>
         <ion-button color="danger" expand="block" (click)="deleteEncounter(encounter._id)">
           Delete Encounter
         </ion-button>
