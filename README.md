@@ -17,3 +17,8 @@ This Project been made Angular, Node.js and Ionic for the Front-End and Mongodb 
 ### Client-Side
 * Run This Command to start Client-Side - `ng serve` <br>
 * This will start the Client-Side at - `http://localhost:4200/` <br>
+### Server
+* First go into BackEnd folder - `cd BackEnd` <br>
+* Run This Command to start Server - `nodemon server.js` <br>
+* This will start the Server at  `http://localhost:5000/` <br>
+
