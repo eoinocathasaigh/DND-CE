@@ -49,7 +49,7 @@ export class PlayCombatComponent implements OnInit {
   name: string = '';
   fighters: any[] = [];
 
-  type: string = '';
+  nameInput: string = '';
   hp: number | null = null;
   initiative: number | null = null;
 
@@ -74,9 +74,9 @@ export class PlayCombatComponent implements OnInit {
   }
 
   addFighter() {
-    if (this.type && this.hp !== null && this.initiative !== null) {
-      this.fighters.push({ type: this.type, hp: this.hp, initiative: this.initiative });
-      this.type = '';
+    if (this.nameInput && this.hp !== null && this.initiative !== null) {
+      this.fighters.push({ name: this.nameInput, hp: this.hp, initiative: this.initiative });
+      this.nameInput = '';
       this.hp = null;
       this.initiative = null;
     }

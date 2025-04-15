@@ -82,20 +82,6 @@ app.post('/api/CombatTracker', async (req, res) => {
 // Update an existing combat encounter
 app.put('/api/CombatTracker/:id', async (req, res) => {
     try {
-        const { name, fighters } = req.body;
-        const updatedEncounter = await CombatModel.findByIdAndUpdate(
-            req.params.id,
-            { name, fighters },
-            { new: true }
-        );
-        res.status(200).json({ message: 'Encounter updated successfully', encounter: updatedEncounter });
-    } catch (error) {
-        res.status(500).json({ message: 'Error updating combat encounter', error });
-    }
-});
-
-app.put('/api/CombatTracker/:id', async (req, res) => {
-    try {
       const { id } = req.params;
       const updatedEncounter = await CombatModel.findByIdAndUpdate(id, req.body, { new: true });
       if (!updatedEncounter) {
@@ -106,7 +92,7 @@ app.put('/api/CombatTracker/:id', async (req, res) => {
       console.error('Error updating encounter:', error);
       res.status(500).json({ message: 'Error updating encounter', error });
     }
-  });
+});
 
 // Delete a combat encounter
 app.delete('/api/CombatTracker/:id', async (req, res) => {

@@ -1,15 +1,15 @@
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Create New Encounter</ion-card-title>
+      <ion-card-title><strong>Create New Encounter</strong></ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <p>You'll need the following:</p>
       <ul>
-        <li><strong>Name</strong> of the encounter</li>
-        <li><strong>Fighter Type</strong>: Monster/Player name</li>
-        <li><strong>HP</strong>: Health Points</li>
-        <li><strong>Initiative</strong>: Turn order number</li>
+        <li><strong>Name</strong> for the encounter, something descriptive for whatever situation the party is in</li>
+        <li><strong>Fighter Type</strong>: This is the name of the Monster/Fighter currently locked in combat</li>
+        <li><strong>HP</strong>: Health Points, how much vigor does this fighter have</li>
+        <li><strong>Initiative</strong>: Turn order number, the higher the initiative, the sooner your turn</li>
       </ul>
     </ion-card-content>
   </ion-card>
@@ -17,37 +17,35 @@
   <form (ngSubmit)="saveEncounter()">
     <!-- Encounter Name -->
     <ion-item>
-      <ion-label position="floating">Encounter Name</ion-label>
+      <ion-label position="floating"><strong>Encounter Name</strong></ion-label>
       <ion-input [(ngModel)]="name" name="name" required></ion-input>
     </ion-item>
 
     <!-- Fighter Name -->
     <ion-item>
-        <ion-label position="floating">Fighter Name</ion-label>
+        <ion-label position="floating"><strong>Fighter Name</strong></ion-label>
         <ion-input [(ngModel)]="fighterName" name="fighterName"></ion-input>
     </ion-item>
 
     <!-- Fighter HP -->
     <ion-item>
-      <ion-label position="floating">Fighter HP</ion-label>
+      <ion-label position="floating"><strong>Fighter HP</strong></ion-label>
       <ion-input type="number" [(ngModel)]="hp" name="hp"></ion-input>
     </ion-item>
 
     <!-- Fighter Initiative -->
     <ion-item>
-      <ion-label position="floating">Initiative</ion-label>
+      <ion-label position="floating"><strong>Initiative</strong></ion-label>
       <ion-input type="number" [(ngModel)]="initiative" name="initiative"></ion-input>
     </ion-item>
 
     <!-- Add Fighter Button -->
-    <ion-button expand="block" (click)="addFighter()" type="button" class="ion-margin-top">
-      Add Fighter
-    </ion-button>
+    <ion-button expand="block" (click)="addFighter()" type="button" class="ion-margin-top"><strong>Add Fighter</strong></ion-button>
 
     <!-- Fighters List -->
     <ion-card *ngIf="fighters.length > 0">
       <ion-card-header>
-        <ion-card-title>Fighters</ion-card-title>
+        <ion-card-title><strong><u>Fighters</u></strong></ion-card-title>
       </ion-card-header>
       <ion-list>
         <ion-item *ngFor="let fighter of fighters">
@@ -57,8 +55,6 @@
     </ion-card>
 
     <!-- Save Encounter Button -->
-    <ion-button expand="block" color="success" type="submit" class="ion-margin-top">
-      Save Encounter
-    </ion-button>
+    <ion-button expand="block" color="success" type="submit" class="ion-margin-top"><strong>Save Encounter</strong></ion-button>
   </form>
 </ion-content>
