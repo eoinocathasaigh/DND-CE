@@ -11,18 +11,22 @@ export class CharacterService {
   constructor(private http: HttpClient) {}
 
   //Fetch all Character 
-  getCharacter(characterData: any): Observable<any[]> {
+  getCharacters(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+  getCharacterById(id: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+
   //Add a new Character 
-  addCharacter(encounter: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, encounter);
+  addCharacter(NewCharacter: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, NewCharacter);
   }
 
   //Update an existing Character 
-  updateCharacter(id: string, encounter: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${id}`, encounter);
+  updateCharacter(id: string, UpdateCharacter: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, UpdateCharacter);
   }
 
   //Delete a Character 

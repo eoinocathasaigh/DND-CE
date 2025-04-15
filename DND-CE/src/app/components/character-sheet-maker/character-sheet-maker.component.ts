@@ -1,20 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core'; 
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormArray, ReactiveFormsModule  } from '@angular/forms';
-import { IonButton, IonTextarea, IonLabel, IonItem, IonListHeader, IonInput, IonContent, IonText } from "@ionic/angular/standalone";
+import { IonButton, IonTextarea, IonLabel, IonItem, IonListHeader, IonInput, IonContent, IonText, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle } from "@ionic/angular/standalone";
 import { CharacterService } from '../../services/character.service'; 
 
 @Component({
   selector: 'app-character-create',
   templateUrl: './character-sheet-maker.component.html',
-  imports: [IonText, CommonModule, ReactiveFormsModule, IonContent, IonInput, IonListHeader, IonItem, IonListHeader, IonInput, IonTextarea, IonButton, IonButton, IonContent, IonItem, IonLabel],
+  imports: [IonTitle, IonBackButton, IonButtons, IonToolbar, IonHeader, IonText, CommonModule, ReactiveFormsModule, IonContent, IonInput, IonListHeader, IonItem, IonListHeader, IonInput, IonTextarea, IonButton, IonButton, IonContent, IonItem, IonLabel],
 
   styleUrls: ['./character-sheet-maker.component.css'],
 })
 export class CharacterSheetMakerComponent {
   characterForm: FormGroup;
   
-  constructor(private fb: FormBuilder, private characterService: CharacterService) {
+  constructor(private fb: FormBuilder, private characterService: CharacterService, private router: Router) {
     this.characterForm = this.fb.group({
       name: ['', Validators.required],
       img: [''],
@@ -72,7 +73,9 @@ export class CharacterSheetMakerComponent {
       this.characterService.addCharacter(characterData).subscribe(
         (response) => {
           console.log('Character created successfully!', response);
-          // Maybe show a success message or reset the form here
+          this.router.navigate(['/character']).then(() => {
+            window.location.reload();
+          });
         },
         (error) => {
           console.error('Error creating character', error);

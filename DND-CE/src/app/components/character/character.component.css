@@ -10,3 +10,43 @@
     --border-radius: 8px;
 }
   
+/* Style the character card header */
+.character-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  /* Container for the circular image */
+  .character-img-container {
+    width: 80px; /* Adjust the size of the image */
+    height: 80px; /* Adjust the size of the image */
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden;
+    margin-right: 10px; /* Space between the image and text */
+  }
+  
+  /* The actual image inside the circular container */
+  .character-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fits within the circle */
+  }
+  
+  /* Style the character details section */
+  .character-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Optional: Style the title and subtitle for better spacing */
+  ion-card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  ion-card-subtitle {
+    font-size: 1em;
+    color: #777;
+  }
+  

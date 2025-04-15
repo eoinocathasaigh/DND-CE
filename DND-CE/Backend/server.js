@@ -148,11 +148,25 @@ const characterModel = mongoose.model('Character', characterSchema, 'Character')
 app.get('/api/character', async (req, res) => {
     try {
         const characters = await characterModel.find({});
-        res.status(200).json({ characters });
+        res.status(200).json(characters)
     } catch (error) {
         res.status(500).json({ message: 'Error fetching characters', error });
     }
 });
+
+app.get('/api/character/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const character = await characterModel.findById(id);
+      if (!character) {
+        return res.status(404).json({ message: 'character not found' });
+      }
+      res.status(200).json(character);
+    } catch (error) {
+      console.error('Error fetching character:', error);
+      res.status(500).json({ message: 'Error fetching character', error });
+    }
+  });
 
 // Add a new character
 app.post('/api/character', async (req, res) => {

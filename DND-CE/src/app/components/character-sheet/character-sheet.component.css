@@ -1,0 +1,26 @@
+.character-sheet-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .character-img-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .character-main-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  

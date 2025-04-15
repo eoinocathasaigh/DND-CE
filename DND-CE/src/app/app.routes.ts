@@ -8,6 +8,7 @@ import { CreateCombatComponent } from './components/create-combat/create-combat.
 import { PlayCombatComponent } from './components/play-combat/play-combat.component';
 import { SearchComponent } from './components/search/search.component';
 import { CharacterSheetMakerComponent } from './components/character-sheet-maker/character-sheet-maker.component';
+import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
 
 export const routes: Routes = [
     { path: "", component: HomeComponent },
@@ -18,6 +19,8 @@ export const routes: Routes = [
     { path: "settings", component: SettingsComponent },
     { path: "search", component: SearchComponent },
     { path: 'character-sheet-maker', component: CharacterSheetMakerComponent },
+    { path: 'character-sheet/:id', component:  CharacterSheetComponent},
+
     {
         path: 'play-encounter/:id',
         component: PlayCombatComponent
