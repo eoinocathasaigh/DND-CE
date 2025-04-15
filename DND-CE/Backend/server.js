@@ -17,7 +17,7 @@ app.use(function (req, res, next) {
 });
 
 // MongoDB Connection
-mongoose.connect('mongodb+srv://dnduser:dndpass@dndcluster.xlb2uao.mongodb.net/combatInfo?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://dnduser:dndpass@dndcluster.xlb2uao.mongodb.net/dndDB?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
@@ -41,7 +41,7 @@ const encounterSchema = new mongoose.Schema({
 });
 
 // Define Model
-const CombatModel = mongoose.model('combatData', encounterSchema); // Use 'combatData' as the collection name
+const CombatModel = mongoose.model('combatData', encounterSchema, 'combatData'); // Use 'combatData' as the collection name
 //API endpoints
 // Get all combat encounters
 app.get('/api/CombatTracker', async (req, res) => {
@@ -115,7 +115,7 @@ const characterSchema = new mongoose.Schema({
 });
 
 // Define the Character model
-const characterModel = mongoose.model('Character', characterSchema); // Collection: 'characters'
+const characterModel = mongoose.model('Character', characterSchema, 'Character'); // Collection: 'characters'
 
 // Get all characters
 app.get('/api/character', async (req, res) => {
