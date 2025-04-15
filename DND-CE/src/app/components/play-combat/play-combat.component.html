@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar color="dark">
-      <ion-title>Playing Encounter</ion-title>
+      <ion-title><strong>Playing Encounter {{name}}</strong></ion-title>
     </ion-toolbar>
   </ion-header>
   
@@ -10,9 +10,10 @@
         <ion-card-title>{{ name }}</ion-card-title>
       </ion-card-header>
   
+      <!--Allowing the user to edit the encounters name-->
       <ion-card-content>
         <ion-item>
-          <ion-label position="floating">Edit Encounter Name</ion-label>
+          <ion-label position="floating"><strong>Edit Encounter Name</strong></ion-label>
           <ion-input [(ngModel)]="name"></ion-input>
         </ion-item>
       </ion-card-content>
@@ -20,29 +21,31 @@
   
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Add Fighter</ion-card-title>
+        <ion-card-title><strong>Add Fighter</strong></ion-card-title>
       </ion-card-header>
   
+      <!--Section for adding a new fighter to the current encounter-->
       <ion-card-content>
         <ion-item>
-          <ion-label position="floating">Type</ion-label>
+          <ion-label position="floating"><strong>Type</strong></ion-label>
           <ion-input [(ngModel)]="nameInput"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">HP</ion-label>
+          <ion-label position="floating"><strong>HP</strong></ion-label>
           <ion-input type="number" [(ngModel)]="hp"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Initiative</ion-label>
+          <ion-label position="floating"><strong>Initiative</strong></ion-label>
           <ion-input type="number" [(ngModel)]="initiative"></ion-input>
         </ion-item>
         <ion-button expand="block" (click)="addFighter()">Add Fighter</ion-button>
       </ion-card-content>
     </ion-card>
   
+    <!--Displaying all fighters for this particular encounter-->
     <ion-card *ngIf="fighters.length">
       <ion-card-header>
-        <ion-card-title>Fighters (Sorted by Initiative)</ion-card-title>
+        <ion-card-title><u>Fighters locked in combat</u></ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-list>

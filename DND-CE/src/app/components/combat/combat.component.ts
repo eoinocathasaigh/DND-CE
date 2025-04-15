@@ -54,17 +54,17 @@ export class CombatComponent implements OnInit {
     );
   }
 
-  // Play encounter
+  //Play encounter
   playEncounter(encounterId: string) {
-    // Navigate to the play encounter page
+    //Navigate to the play encounter page
     this.router.navigate(['/playCombat/' + encounterId, encounterId]);
   }
 
-  // Delete an encounter
+  //Delete an encounter
   deleteEncounter(id: string): void {
     this.combatService.deleteCombatEncounter(id).subscribe({
       next: () => {
-        this.loadEncounters(); // Reload encounters after deletion
+        this.loadEncounters(); //Reload encounters after deletion
       },
       error: (err) => {
         console.error(`Error deleting encounter with ID ${id}:`, err);

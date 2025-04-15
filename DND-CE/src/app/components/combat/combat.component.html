@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content class="ion-padding custom-bg">
+  <!--This is a basic intro/explanation of what this section has to offer-->
   <ion-card>
     <ion-card-header>
       <ion-card-title><strong>Welcome To the Combat Tracker!</strong></ion-card-title>
@@ -16,21 +17,23 @@
 
   <ion-button expand="block" color="success" routerLink="/createCombat"><strong>Create a New Encounter!</strong></ion-button>
 
+  <!--This section is completely dedicated for the loaded in encounters if there are any at all-->
   <ion-list *ngIf="encounters.length > 0">
     <ion-card *ngFor="let encounter of encounters">
+      <!--We then display the encounter name-->
       <ion-card-header>
         <ion-card-title>{{ encounter.name }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
+        <!--We then also offer the option to play this particular encounter or simply delete it, both of which will perform the particular action in the database-->
         <img [src]="encounter.image" alt="{{encounter.name}}" style="width: 100%; border-radius: 8px;"/>
         <ion-button expand="block" [routerLink]="['/play-encounter', encounter._id]">Play Encounter</ion-button>
-        <ion-button color="danger" expand="block" (click)="deleteEncounter(encounter._id)">
-          Delete Encounter
-        </ion-button>
+        <ion-button color="danger" expand="block" (click)="deleteEncounter(encounter._id)">Delete Encounter</ion-button>
       </ion-card-content>
     </ion-card>
   </ion-list>
 
+  <!--If there are no loaded in encounters we simply have this placeholder at the moment-->
   <ion-text *ngIf="encounters.length === 0">
     <p>No encounters found.</p>
   </ion-text>

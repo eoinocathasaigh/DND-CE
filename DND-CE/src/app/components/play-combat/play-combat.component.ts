@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // ✅ <-- Add this
-
-// Ionic standalone components
+import { FormsModule } from '@angular/forms';
 import {
   IonButton,
   IonCard,
@@ -26,7 +24,7 @@ import {
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule, // ✅ <-- Required for ngModel to work
+    FormsModule,
     IonButton,
     IonInput,
     IonItem,
@@ -53,13 +51,16 @@ export class PlayCombatComponent implements OnInit {
   hp: number | null = null;
   initiative: number | null = null;
 
+  //Constructor for initializing the different services and variables
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) {}
 
+  //Initializing things like the id and then loading in the particular encounter
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id')!;
     this.loadEncounter();
   }
 
+  //Loading the encounter from the database using the id
   loadEncounter() {
     this.http.get<any>(`http://localhost:5000/api/CombatTracker`).subscribe({
       next: (data) => {
@@ -73,6 +74,8 @@ export class PlayCombatComponent implements OnInit {
     });
   }
 
+  //Adding a new fighter to the encounter
+  //This is done by pushing the new fighter to the fighters array and then resetting the input fields
   addFighter() {
     if (this.nameInput && this.hp !== null && this.initiative !== null) {
       this.fighters.push({ name: this.nameInput, hp: this.hp, initiative: this.initiative });
@@ -82,6 +85,7 @@ export class PlayCombatComponent implements OnInit {
     }
   }
 
+  //Saving the current encounter to the database with all the newly added fighters included
   saveEncounter() {
     const updatedEncounter = {
       name: this.name,
@@ -89,11 +93,12 @@ export class PlayCombatComponent implements OnInit {
     };
 
     this.http.put(`http://localhost:5000/api/CombatTracker/${this.id}`, updatedEncounter).subscribe({
-      next: () => this.router.navigate(['/Combat']),
+      next: () => this.router.navigate(['/combat']),
       error: (err) => console.error('Error saving encounter:', err)
     });
   }
 
+  //Sorting each of the fighters by their initiative value -> highest to lowest
   getSortedFighters() {
     return this.fighters.slice().sort((a, b) => b.initiative - a.initiative);
   }

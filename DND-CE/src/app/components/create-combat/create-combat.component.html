@@ -3,6 +3,7 @@
     <ion-card-header>
       <ion-card-title><strong>Create New Encounter</strong></ion-card-title>
     </ion-card-header>
+    <!--This is just a basic explanation for encounters in dnd and the various things offered-->
     <ion-card-content>
       <p>You'll need the following:</p>
       <ul>
@@ -14,6 +15,7 @@
     </ion-card-content>
   </ion-card>
 
+  <!--Actual form for creating/submitting details about an encounter-->
   <form (ngSubmit)="saveEncounter()">
     <!-- Encounter Name -->
     <ion-item>
@@ -42,7 +44,7 @@
     <!-- Add Fighter Button -->
     <ion-button expand="block" (click)="addFighter()" type="button" class="ion-margin-top"><strong>Add Fighter</strong></ion-button>
 
-    <!-- Fighters List -->
+    <!-- Fighters List -> updates based on how many fighters are added-->
     <ion-card *ngIf="fighters.length > 0">
       <ion-card-header>
         <ion-card-title><strong><u>Fighters</u></strong></ion-card-title>
@@ -54,7 +56,7 @@
       </ion-list>
     </ion-card>
 
-    <!-- Save Encounter Button -->
+    <!-- This button will simply save the encounter to the database -->
     <ion-button expand="block" color="success" type="submit" class="ion-margin-top"><strong>Save Encounter</strong></ion-button>
   </form>
 </ion-content>
