@@ -62,8 +62,14 @@ export class CombatComponent implements OnInit {
 
   // Delete an encounter
   deleteEncounter(id: string): void {
-    this.combatService.deleteCombatEncounter(id).subscribe(() => {
-      this.loadEncounters(); // Reload encounters after deletion
+    this.combatService.deleteCombatEncounter(id).subscribe({
+      next: () => {
+        console.log(`Encounter with ID ${id} deleted successfully.`);
+        this.loadEncounters(); // Reload encounters after deletion
+      },
+      error: (err) => {
+        console.error(`Error deleting encounter with ID ${id}:`, err);
+      },
     });
   }
 }

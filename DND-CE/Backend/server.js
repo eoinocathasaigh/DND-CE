@@ -83,9 +83,14 @@ app.put('/api/CombatTracker/:id', async (req, res) => {
 // Delete a combat encounter
 app.delete('/api/CombatTracker/:id', async (req, res) => {
     try {
-        const deletedEncounter = await CombatModel.findByIdAndDelete(req.params.id);
+        const { id } = req.params;
+        const deletedEncounter = await CombatModel.findByIdAndDelete(id);
+        if (!deletedEncounter) {
+            return res.status(404).json({ message: 'Encounter not found' });
+        }
         res.status(200).json({ message: 'Encounter deleted successfully', encounter: deletedEncounter });
     } catch (error) {
+        console.error('Error deleting combat encounter:', error);
         res.status(500).json({ message: 'Error deleting combat encounter', error });
     }
 });
