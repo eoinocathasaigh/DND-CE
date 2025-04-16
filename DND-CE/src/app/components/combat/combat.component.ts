@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonImg, IonList, IonText, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonText, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { CombatService } from '../../services/combat.service';
 
 @Component({
@@ -19,7 +19,6 @@ import { CombatService } from '../../services/combat.service';
     IonContent,
     IonTitle,
     IonToolbar,
-    IonList,
     IonText
   ],
   templateUrl: './combat.component.html',
