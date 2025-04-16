@@ -4,7 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
+  IonBackButton,
   IonButton,
+  IonButtons,
   IonCard,
   IonCardContent,
   IonCardHeader,
@@ -37,7 +39,9 @@ import {
     IonCardContent,
     IonCardTitle,
     IonCard,
-    IonContent
+    IonContent,
+    IonBackButton,
+    IonButtons
   ],
   templateUrl: './play-combat.component.html',
   styleUrls: ['./play-combat.component.css']

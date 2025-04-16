@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 import { CombatService } from '../../services/combat.service';
-import { IonicModule } from '@ionic/angular';
+import { IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-create-encounter',
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, IonButton, IonItem, IonList, IonCardTitle, IonCardHeader, IonHeader, IonToolbar, IonButtons, IonContent, IonCard, IonLabel, IonCardContent, IonTitle, IonBackButton],
   templateUrl: './create-combat.component.html',
   styleUrls: ['./create-combat.component.css'],
 })
