@@ -1,1 +1,45 @@
-<p>search works!</p>
+<!-- search.component.html -->
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Search Spells</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <!-- Search bar and category selection -->
+    <ion-item>
+        <ion-select [(ngModel)]="category">
+            <ion-select-option value="spells">Spells</ion-select-option>
+            <ion-select-option value="spelllist">Spelllist</ion-select-option>
+            <ion-select-option value="monsters">Monsters</ion-select-option>
+            <ion-select-option value="documents">Documents</ion-select-option>
+            <ion-select-option value="backgrounds">Backgrounds</ion-select-option>
+            <ion-select-option value="planes">Planes</ion-select-option>
+            <ion-select-option value="sections">Sections</ion-select-option>
+            <ion-select-option value="feats">Feats</ion-select-option>
+            <ion-select-option value="conditions">Conditions</ion-select-option>
+            <ion-select-option value="races">Races</ion-select-option>
+            <ion-select-option value="classes">Classes</ion-select-option>
+            <ion-select-option value="magicitems">Magicitems</ion-select-option>
+            <ion-select-option value="weapons">Weapons</ion-select-option>
+            <ion-select-option value="armor">Armor</ion-select-option>
+        </ion-select>
+      
+        <!-- Search input and button -->
+        <ion-input [(ngModel)]="query" placeholder="Search..." (keyup.enter)="onSearch()"></ion-input>
+        <ion-button (click)="onSearch()">Search</ion-button>
+      </ion-item>
+      
+  
+    <ion-spinner *ngIf="loading" name="dots"></ion-spinner>
+  
+    <!-- Handle spell results -->
+    <ion-list *ngIf="results.length">
+      <ion-item *ngFor="let item of results">
+        <ion-label>
+          <h2>{{ item.name }}</h2>
+          <p *ngIf="item.desc">{{ item.desc }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
