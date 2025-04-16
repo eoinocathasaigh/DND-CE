@@ -9,6 +9,7 @@ import { PlayCombatComponent } from './components/play-combat/play-combat.compon
 import { SearchComponent } from './components/search/search.component';
 import { CharacterSheetMakerComponent } from './components/character-sheet-maker/character-sheet-maker.component';
 import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
+import { CharacterUpdateComponent } from './components/character-update/character-update.component';
 
 export const routes: Routes = [
     { path: "", component: HomeComponent },
@@ -20,6 +21,8 @@ export const routes: Routes = [
     { path: "search", component: SearchComponent },
     { path: 'character-sheet-maker', component: CharacterSheetMakerComponent },
     { path: 'character-sheet/:id', component:  CharacterSheetComponent},
+    { path: 'character-update/:id', component:  CharacterUpdateComponent},
+
 
     {
         path: 'play-encounter/:id',
