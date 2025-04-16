@@ -9,12 +9,12 @@ import { CharacterService } from '../../services/character.service';
   selector: 'app-character-create',
   templateUrl: './character-sheet-maker.component.html',
   imports: [IonTitle, IonBackButton, IonButtons, IonToolbar, IonHeader, IonText, CommonModule, ReactiveFormsModule, IonContent, IonInput, IonListHeader, IonItem, IonListHeader, IonInput, IonTextarea, IonButton, IonButton, IonContent, IonItem, IonLabel],
-
   styleUrls: ['./character-sheet-maker.component.css'],
 })
 export class CharacterSheetMakerComponent {
   characterForm: FormGroup;
   
+  // Constructor to initialize the form and inject services
   constructor(private fb: FormBuilder, private characterService: CharacterService, private router: Router) {
     this.characterForm = this.fb.group({
       name: ['', Validators.required],
@@ -58,18 +58,22 @@ export class CharacterSheetMakerComponent {
     return this.characterForm.get('spells') as FormArray;
   }
 
+  // Method to set FormArray values
   addItem(array: FormArray, value: string = '') {
     array.push(this.fb.control(value));
   }
 
+  // Method to remove item from FormArray
   removeItem(array: FormArray, index: number) {
     array.removeAt(index);
   }
 
+  // Method to handle form submission
   onSubmit() {
     if (this.characterForm.valid) {
       const characterData = this.characterForm.value;
 
+      // Add the character data to the database using the CharacterService
       this.characterService.addCharacter(characterData).subscribe(
         (response) => {
           console.log('Character created successfully!', response);
@@ -79,7 +83,6 @@ export class CharacterSheetMakerComponent {
         },
         (error) => {
           console.error('Error creating character', error);
-          // Handle errors here
         }
       );
     }

@@ -41,8 +41,8 @@ export class CharacterComponent {
     }
   }
 
-  editCharacter() {
-    // Edit character logic
+  editCharacter(id: string) {
+    this.router.navigate(['/character-update', id]);
   }
 
   // Navigate to the character sheet maker

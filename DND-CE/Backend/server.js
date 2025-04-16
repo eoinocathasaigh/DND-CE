@@ -171,7 +171,6 @@ app.get('/api/character/:id', async (req, res) => {
 
 // Add a new Character
 app.post('/api/character', async (req, res) => {
-    console.log('debug: ', req.body); // Debugging line to check the request body
     try {
         const characterData = req.body; // Getting the form data
         const newCharacter = new characterModel(characterData); // Create a new character
