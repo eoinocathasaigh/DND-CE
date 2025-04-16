@@ -154,6 +154,7 @@ app.get('/api/character', async (req, res) => {
     }
 });
 
+// Get a Character by ID
 app.get('/api/character/:id', async (req, res) => {
     try {
       const { id } = req.params;
@@ -168,7 +169,7 @@ app.get('/api/character/:id', async (req, res) => {
     }
   });
 
-// Add a new character
+// Add a new Character
 app.post('/api/character', async (req, res) => {
     console.log('debug: ', req.body); // Debugging line to check the request body
     try {
@@ -179,4 +180,34 @@ app.post('/api/character', async (req, res) => {
       } catch (error) {
         res.status(500).json({ message: 'Error creating character', error });
       }
+});
+
+// Update an existing Character
+app.put('/api/character/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedCharacter = await characterModel.findByIdAndUpdate(id, req.body, { new: true });
+    if (!updatedCharacter) {
+      return res.status(404).json({ message: 'Character not found' });
+    }
+    res.status(200).json(updatedCharacter);
+  } catch (error) {
+    console.error('Error updating Character:', error);
+    res.status(500).json({ message: 'Error updating Character', error });
+  }
+});
+
+// Delete a character
+app.delete('/api/character/:id', async (req, res) => {
+  try {
+      const { id } = req.params;
+      const deletedCharacter = await characterModel.findByIdAndDelete(id);
+      if (!deletedCharacter) {
+          return res.status(404).json({ message: 'Character not found' });
+      }
+      res.status(200).json({ message: 'Character deleted successfully', character: deletedCharacter });
+    } catch (error) {
+      console.error('Error deleting Character:', error);
+      res.status(500).json({ message: 'Error deleting Character', error });
+  }
 });

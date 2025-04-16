@@ -3,17 +3,17 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Create Character</ion-title>
+    <ion-title *ngIf="character">{{ character.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
+<!--  -->
 <ion-content class="ion-padding">
 
   <ion-card *ngIf="character">
     <ion-card-header class="character-header">
       <div class="character-sheet-header">
-        <img [src]="character.img" alt="Character Image" class="character-img-large" />
+        <img [src]="character.img || 'assets/img/appLogo.svg'" (error)="onImageError($event)" alt="Character Image" class="character-img"/>        
         <div class="character-main-details">
           <ion-card-title>{{ character.name }}</ion-card-title>
           <ion-card-subtitle>{{ character.race }} - {{ character.class }} - Level {{ character.level }}</ion-card-subtitle>

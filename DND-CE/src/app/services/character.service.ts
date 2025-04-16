@@ -20,13 +20,13 @@ export class CharacterService {
   }
 
   //Add a new Character 
-  addCharacter(NewCharacter: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, NewCharacter);
+  addCharacter(newCharacter: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, newCharacter);
   }
 
   //Update an existing Character 
-  updateCharacter(id: string, UpdateCharacter: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${id}`, UpdateCharacter);
+  updateCharacter(id: string, updatedCharacter: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, updatedCharacter);
   }
 
   //Delete a Character 

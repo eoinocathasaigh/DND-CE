@@ -26,5 +26,9 @@ export class CharacterSheetComponent  implements OnInit {
     }
   }
 
+    // Handle image error by setting a default image
+    onImageError(event: Event) {
+      (event.target as HTMLImageElement).src = 'assets/img/appLogo.svg';
+    }
 
 }
