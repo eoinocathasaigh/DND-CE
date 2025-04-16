@@ -1,20 +1,33 @@
-/* General css */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #323232;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    border-radius: 20px 20px 0 0;
-    border: 2px solid black;  
-}
+.footer-toolbar {
+    --padding-start: 0;
+    --padding-end: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px; /* Adjust spacing between buttons */
+  }
+  
+  ion-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --padding-start: 0;
+    --padding-end: 0;
+    --background: transparent; /* Remove background */
+    --border-radius: 50%; /* Keep circular look */
+    --box-shadow: none; /* Remove shadow */
+  }
+  
+  .footer-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin: 0px 35px; /* Center icon within the button */
+  }
   

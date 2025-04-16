@@ -1,6 +1,18 @@
 <ion-footer>
-    <ion-toolbar color="dark">
-        <ion-title class="ion-text-center">DND-CE</ion-title>
+    <ion-toolbar color="dark" class="footer-toolbar">
+      <div class="footer-buttons">
+        <ion-button (click)="goToDice()">
+          <ion-img src="assets/img/dice.svg" class="footer-icon"></ion-img>
+        </ion-button>
+  
+        <ion-button (click)="goToCombat()">
+          <ion-img src="assets/img/sword.svg" class="footer-icon"></ion-img>
+        </ion-button>
+  
+        <ion-button (click)="goToCharacter()">
+          <ion-img src="assets/img/character.svg" class="footer-icon"></ion-img>
+        </ion-button>
+      </div>
     </ion-toolbar>
-</ion-footer>
+  </ion-footer>
   
