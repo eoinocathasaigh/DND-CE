@@ -106,4 +106,22 @@ export class PlayCombatComponent implements OnInit {
   getSortedFighters() {
     return this.fighters.slice().sort((a, b) => b.initiative - a.initiative);
   }
+
+  adjustHp(fighter: any, change: number) {
+    fighter.hp += change;
+  
+    //This will prevent there from being a negative hp value
+    if (fighter.hp < 0) {
+      fighter.hp = 0;
+    }
+  }  
+
+  //Method for removing a fighter from the encounter (ie. they died)
+  removeFighter(fighter: any) {
+    const index = this.fighters.indexOf(fighter);
+    if (index > -1) {
+      this.fighters.splice(index, 1);
+    }
+  }
+  
 }

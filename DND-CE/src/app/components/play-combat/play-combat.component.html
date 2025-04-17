@@ -30,8 +30,14 @@
       <ion-card-content>
         <ion-list>
           <ion-item *ngFor="let fighter of getSortedFighters()">
-            <b>{{ fighter.name }}</b> - <b>Initiative:</b> {{ fighter.initiative }}, <b>HP:</b> {{ fighter.hp }}
-          </ion-item>
+            <ion-label>
+              <b>{{ fighter.name }}</b> - <b>Initiative:</b> {{ fighter.initiative }}, <b>HP:</b> {{ fighter.hp }}
+            </ion-label>
+          
+            <ion-button fill="outline" size="small" (click)="adjustHp(fighter, -1)">-</ion-button>
+            <ion-button fill="outline" size="small" (click)="adjustHp(fighter, 1)">+</ion-button>
+            <ion-button fill="outline" size="small" color="danger" (click)="removeFighter(fighter)">Kill Fighter</ion-button>
+          </ion-item>        
         </ion-list>
       </ion-card-content>
     </ion-card>
