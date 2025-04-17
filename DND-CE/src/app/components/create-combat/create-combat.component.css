@@ -1,0 +1,82 @@
+/* Background and general layout */
+ion-content {
+    --background: red; /* Deep red tone for that D&D feel */
+    color: #fff;
+    padding: 16px;
+  }
+  
+  /* Card styling for instructions and fighter list */
+  ion-card {
+    background-color: #1e1e1e;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  ion-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffd700; /* gold accent */
+  }
+  
+  /* Form Elements */
+  ion-item {
+    --background: #333;
+    --color: white;
+    border-radius: 12px;
+    margin: 8px 0;
+    padding: 8px;
+    --highlight-color-focused: #ffd700;
+  }
+  
+  ion-label {
+    font-weight: 600;
+    color: #ccc;
+  }
+  
+  ion-input {
+    color: white;
+  }
+  
+  /* Buttons */
+  ion-button {
+    --background: #ffd700;
+    --color: #000;
+    font-weight: bold;
+    border-radius: 12px;
+    margin-top: 12px;
+  }
+  
+  ion-button[color="success"] {
+    --background: #28a745;
+    --color: white;
+  }
+  
+  /* Fighter List Styling */
+  ion-list {
+    background: #2a2a2a;
+    border-radius: 12px;
+    padding: 8px;
+  }
+  
+  ion-item::part(native) {
+    background: transparent;
+    border-bottom: 1px solid #444;
+    color: white;
+  }
+  
+  /* Responsive text spacing and padding */
+  p, ul {
+    color: #ccc;
+    font-size: 0.95rem;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  strong {
+    color: #fff;
+  }
+  

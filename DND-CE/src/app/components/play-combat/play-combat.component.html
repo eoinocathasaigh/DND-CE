@@ -22,6 +22,20 @@
       </ion-card-content>
     </ion-card>
   
+    <!--Displaying all fighters for this particular encounter-->
+    <ion-card *ngIf="fighters.length">
+      <ion-card-header>
+        <ion-card-title><u>Fighters locked in combat</u></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let fighter of getSortedFighters()">
+            <b>{{ fighter.name }}</b> - <b>Initiative:</b> {{ fighter.initiative }}, <b>HP:</b> {{ fighter.hp }}
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
     <ion-card>
       <ion-card-header>
         <ion-card-title><strong>Add Fighter</strong></ion-card-title>
@@ -42,20 +56,6 @@
           <ion-input type="number" [(ngModel)]="initiative"></ion-input>
         </ion-item>
         <ion-button expand="block" (click)="addFighter()">Add Fighter</ion-button>
-      </ion-card-content>
-    </ion-card>
-  
-    <!--Displaying all fighters for this particular encounter-->
-    <ion-card *ngIf="fighters.length">
-      <ion-card-header>
-        <ion-card-title><u>Fighters locked in combat</u></ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-list>
-          <ion-item *ngFor="let fighter of getSortedFighters()">
-            <b>{{ fighter.name }}</b> - <b>Initiative:</b> {{ fighter.initiative }}, <b>HP:</b> {{ fighter.hp }}
-          </ion-item>
-        </ion-list>
       </ion-card-content>
     </ion-card>
   
