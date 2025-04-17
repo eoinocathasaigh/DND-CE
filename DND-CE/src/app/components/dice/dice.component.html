@@ -4,19 +4,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding custom-bg">
+
+  <ion-card class="explanationDiv">
+    <ion-card-content class="ion-text-center">
+      <h1>Dice, Dice and more Dice</h1>
+      <p>Dice are a huge part of DND, they are required for everything from talking to combat, this page is dedicated to providing you 7 sets of dice to use on your adventures</p>
+      <p><em>Choose a dice, then click the roll button or shake your device to get your result</em></p>
+    </ion-card-content>
+  </ion-card>
 
   <!-- Result Display -->
-  <ion-card *ngIf="result !== null">
+  <ion-card *ngIf="result !== null" class="diceResult">
     <ion-card-header>
       <ion-card-title>Result</ion-card-title>
     </ion-card-header>
-    <ion-card-content class="ion-text-center">
+    <ion-card-content class="ion-text-center result">
       <h2>You rolled: {{ result }}</h2>
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <ion-card class="diceSelectCard">
     <ion-card-header>
       <ion-card-title>Select a Dice</ion-card-title>
     </ion-card-header>

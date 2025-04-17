@@ -23,3 +23,47 @@
     font-weight: bold;
     padding: 10px;
 }
+
+.explanationDiv{
+    font-size: 1.2rem;
+    border: 2px solid black;
+    border-radius: 15px;
+    color: black;
+}
+
+.diceSelectCard{
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.custom-bg {
+    --background: #8B0000;
+  }
+
+/* Main dice result card */
+.diceResult {
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-align: center;
+    background-color: lightgray; /* Light gray background */
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 400px;
+}
+
+/* Inner result display area */
+.result {
+    background-color: white; /* White background for the result */
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 300px;
+}
