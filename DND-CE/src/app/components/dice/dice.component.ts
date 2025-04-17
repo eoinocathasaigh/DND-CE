@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonItem, IonLabel, IonList, IonRadio, IonRadioGroup, IonTitle, IonToolbar } from '@ionic/angular/standalone';
@@ -20,7 +21,8 @@ import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCon
     IonRadioGroup,
     IonTitle,
     IonToolbar,
-    IonHeader
+    IonHeader,
+    CommonModule
   ],
   templateUrl: './dice.component.html',
   styleUrls: ['./dice.component.css']

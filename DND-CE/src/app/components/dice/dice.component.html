@@ -1,61 +1,62 @@
 <ion-header>
-    <ion-toolbar color="dark">
-      <ion-title>Dice Roller</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content class="ion-padding">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Select a Dice</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <!-- Radio Group for Dice Selection -->
-        <ion-radio-group [(ngModel)]="selectedDice">
-          <ion-list>
-            <ion-item>
-              <ion-label>4-sided Dice (D4)</ion-label>
-              <ion-radio slot="start" [value]="4"></ion-radio>
-            </ion-item>
-            <ion-item>
-              <ion-label>6-sided Dice (D6)</ion-label>
-              <ion-radio slot="start" [value]="6"></ion-radio>
-            </ion-item>
-            <ion-item>
-              <ion-label>8-sided Dice (D8)</ion-label>
-              <ion-radio slot="start" [value]="8"></ion-radio>
-            </ion-item>
-            <ion-item>
-              <ion-label>10-sided Dice (D10)</ion-label>
-              <ion-radio slot="start" [value]="10"></ion-radio>
-            </ion-item>
-            <ion-item>
-              <ion-label>12-sided Dice (D12)</ion-label>
-              <ion-radio slot="start" [value]="12"></ion-radio>
-            </ion-item>
-            <ion-item>
-              <ion-label>20-sided Dice (D20)</ion-label>
-              <ion-radio slot="start" [value]="20"></ion-radio>
-            </ion-item>
-            <ion-item>
-              <ion-label>100-sided Dice (D100)</ion-label>
-              <ion-radio slot="start" [value]="100"></ion-radio>
-            </ion-item>
-          </ion-list>
-        </ion-radio-group>
-      </ion-card-content>
-    </ion-card>
-  
-    <!-- Roll Dice Button -->
-    <ion-button expand="block" color="primary" (click)="rollDice()">Roll Dice</ion-button>
-  
-    <!-- Display Result -->
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Result</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>You rolled: {{ result }}</p>
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
+  <ion-toolbar color="dark">
+    <ion-title>Dice Roller</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Result Display -->
+  <ion-card *ngIf="result !== null">
+    <ion-card-header>
+      <ion-card-title>Result</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-text-center">
+      <h2>You rolled: {{ result }}</h2>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Select a Dice</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-radio-group [(ngModel)]="selectedDice">
+        <ion-list>
+          <ion-item lines="full">
+            <ion-label>D4</ion-label>
+            <ion-radio slot="end" value="4"></ion-radio>
+          </ion-item>
+          <ion-item lines="full">
+            <ion-label>D6</ion-label>
+            <ion-radio slot="end" value="6"></ion-radio>
+          </ion-item>
+          <ion-item lines="full">
+            <ion-label>D8</ion-label>
+            <ion-radio slot="end" value="8"></ion-radio>
+          </ion-item>
+          <ion-item lines="full">
+            <ion-label>D10</ion-label>
+            <ion-radio slot="end" value="10"></ion-radio>
+          </ion-item>
+          <ion-item lines="full">
+            <ion-label>D12</ion-label>
+            <ion-radio slot="end" value="12"></ion-radio>
+          </ion-item>
+          <ion-item lines="full">
+            <ion-label>D20</ion-label>
+            <ion-radio slot="end" value="20"></ion-radio>
+          </ion-item>
+          <ion-item lines="full">
+            <ion-label>D100</ion-label>
+            <ion-radio slot="end" value="100"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </ion-radio-group>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Roll Dice Button -->
+  <ion-button class="roll-btn" (click)="rollDice()">Roll Dice!</ion-button>
+
+</ion-content>
