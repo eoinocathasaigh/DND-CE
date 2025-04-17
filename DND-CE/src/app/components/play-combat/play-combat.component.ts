@@ -107,6 +107,7 @@ export class PlayCombatComponent implements OnInit {
     return this.fighters.slice().sort((a, b) => b.initiative - a.initiative);
   }
 
+  //This method is used by our display to alter the fighters hp value
   adjustHp(fighter: any, change: number) {
     fighter.hp += change;
   
