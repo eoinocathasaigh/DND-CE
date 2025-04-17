@@ -5,22 +5,22 @@
   justify-content: center;
   align-items: center;
   background-color: #1f1f1f; /* Dark base for contrast */
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
 .footer-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px; /* More spacing */
+  gap: 24px;
 }
 
 ion-button {
   --background: #f4f4f4; /* Light background */
   --border-radius: 50%;
   --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -34,6 +34,6 @@ ion-button:hover {
 }
 
 .footer-icon {
-  width: 32px;
-  height: 32px;
+  width: 52px;
+  height: 52px;
 }

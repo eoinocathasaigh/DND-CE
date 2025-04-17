@@ -14,7 +14,11 @@
     <ion-card-content>
       <p>
         Combat is a key part of D&D, where things get intense fast.<br />
-        This tracker helps you manage fighters, health, and positions—all in one place.
+        This tracker helps you manage fighters, health, and positions—all in one place.<br>
+        If you want to create a new encounter, just click the button below!<br>
+        <i>Or</i> if you want to play an existing encounter, scroll down to see the list of encounters you have created and hop right back into the action!<br>
+        Alternatively, if you decide you're done with an encounter, just click the "Delete" button to remove it from the list<br>
+        <strong>So let's get fighting!</strong>
       </p>
     </ion-card-content>
   </ion-card>
@@ -31,7 +35,9 @@
         <ion-card-title>{{ encounter.name }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <img [src]="encounter.image" alt="{{encounter.name}}" class="encounter-image" />
+        <ion-item class="combatDetail">
+          <p>Currently {{encounter.fighters.length}} fighter's locked in combat!</p>
+        </ion-item>
 
         <div class="button-group">
           <ion-button expand="block" [routerLink]="['/play-encounter', encounter._id]" color="success">

@@ -1,13 +1,13 @@
 /* Background and general layout */
 ion-content {
-    --background: red; /* Deep red tone for that D&D feel */
+    --background: #8B0000; /* Deep red tone for that D&D feel */
     color: #fff;
     padding: 16px;
   }
   
   /* Card styling for instructions and fighter list */
   ion-card {
-    background-color: #1e1e1e;
+    background-color: lightgray;
     border-radius: 16px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     margin-bottom: 20px;
@@ -32,11 +32,11 @@ ion-content {
   
   ion-label {
     font-weight: 600;
-    color: #ccc;
+    color: black;
   }
   
   ion-input {
-    color: white;
+    color: black;
   }
   
   /* Buttons */
@@ -55,7 +55,7 @@ ion-content {
   
   /* Fighter List Styling */
   ion-list {
-    background: #2a2a2a;
+    background: white;
     border-radius: 12px;
     padding: 8px;
   }
@@ -63,12 +63,12 @@ ion-content {
   ion-item::part(native) {
     background: transparent;
     border-bottom: 1px solid #444;
-    color: white;
+    color: black;
   }
   
   /* Responsive text spacing and padding */
   p, ul {
-    color: #ccc;
+    color: black;
     font-size: 0.95rem;
   }
   
@@ -77,6 +77,26 @@ ion-content {
   }
   
   strong {
-    color: #fff;
+    color: black;
+  }
+
+  .creationDetails {
+    background-color: lightgray;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    margin-bottom: 20px;
+    color: black;
   }
   
+  .creationItem{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  }
+
+  ion-button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }

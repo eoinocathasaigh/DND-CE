@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { IonFooter, IonToolbar, IonButtons, IonButton, IonImg } from "@ionic/angular/standalone";
+import { IonFooter, IonToolbar, IonButton, IonImg } from "@ionic/angular/standalone";
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
-  imports: [IonImg, IonButton, IonButtons, IonToolbar, IonFooter, ],
+  imports: [IonImg, IonButton, IonToolbar, IonFooter, ],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css'
 })
