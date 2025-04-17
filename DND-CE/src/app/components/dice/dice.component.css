@@ -9,3 +9,17 @@
     --border-radius: 8px;
     text-align: center;
 }
+
+.diceImgStyle{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+    border: 5px solid black;
+    border-radius: 15px;
+}
+
+.diceContainer {
+    font-weight: bold;
+    padding: 10px;
+}

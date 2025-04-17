@@ -1,17 +1,28 @@
 .titleContainer h1 {
   font-size: 2.5rem;
-  color: #0070f3; /* You can customize this color */
+  color: black;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .logoImage {
-  max-width: 100%;
-  height: auto;
-  margin-top: 20px;
+  max-width: 50%;
+  margin: 0 auto;
 }
 
 .appIntro {
   font-size: 1.1rem;
   margin: 20px 0;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: red;
+}
+
+.featuresList {
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 5px;
 }
 
 ion-item {
