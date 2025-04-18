@@ -1,9 +1,11 @@
 {
   "name": "DND-CE",
   "short_name": "DND-CE",
+  "description": "This app performs the simplistic purpose of compiling various tools to do with the popular tabletop game for both the casual player and dungeon master!",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
+  "orientation": "portrait",
   "scope": "./",
   "start_url": "./",
   "icons": [
@@ -44,16 +46,99 @@
       "purpose": "maskable any"
     },
     {
-      "src": "icons/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
       "src": "icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dice",
+      "url": "/dice",
+      "description": "Roll a Dice.",
+      "icons": [
+        {
+        "src": "icons/appLogo.svg",
+        "sizes": "150x150"
+        }
+      ]
+    },
+    {
+      "name": "Combat",
+      "url": "/combat",
+      "description": "Manage Combat.",
+      "icons": [
+        {
+        "src": "icons/appLogo.svg",
+        "sizes": "150x150"
+        }
+      ]
+    },
+    {
+      "name": "Character",
+      "url": "/character",
+      "description": "Character Sheet.",
+      "icons": [
+        {
+        "src": "icons/appLogo.svg",
+        "sizes": "150x150"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "Home",
+      "src": "/image/home.png",
+      "type": "image/png",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    },
+    {
+      "name": "Dice",
+      "src": "/image/dice.png",
+      "type": "image/png",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    },
+    {
+      "name": "Combat",
+      "src": "/image/combat.png",
+      "type": "image/png",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    },
+    {
+      "name": "Character",
+      "src": "/image/character.png",
+      "type": "image/png",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    },
+    {
+      "name": "Search",
+      "src": "/image/search.png",
+      "type": "image/png",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    }    
+  ],
+  
+
+  "widgets": [
+    {
+      "name": "PWAmp mini player",
+      "description": "widget to control the PWAmp music player",
+      "tag": "pwamp",
+      "template": "pwamp-template",
+      "ms_ac_template": "widgets/mini-player-template.json",
+      "data": "widgets/mini-player-data.json",
+      "type": "application/json",
+      "screenshots": [ { "src": "./screenshot-widget.png", "sizes": "600x400", "label": "The PWAmp mini-player widget" } ],
+      "icons": [ { "src": "./favicon-16.png", "sizes": "16x16" } ],
+      "auth": false,
+      "update": 86400
     }
   ]
 }

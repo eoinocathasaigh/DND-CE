@@ -20,7 +20,7 @@ export class SearchComponent {
   constructor(private open5e: Open5eService) {}
 
   onSearch() {
-    if (!this.query || !this.category) return;
+    if (!this.category) return;
   
     this.loading = true;
     this.open5e.search(this.category as any, this.query).subscribe(response => {
