@@ -17,12 +17,14 @@
   border-radius: 15px;
   padding: 10px;
   background-color: red;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .featuresList {
   border: 2px solid black;
   border-radius: 15px;
   padding: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 ion-item {
