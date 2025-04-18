@@ -23,7 +23,18 @@
     <ion-item><ion-label position="floating">Alignment</ion-label><ion-input formControlName="alignment"></ion-input></ion-item>
 
     <!-- Combat Info -->
-<ion-list-header>Combat Info</ion-list-header>
+<ion-list-header><u>Combat Info</u></ion-list-header>
+<ion-item>
+  <p><strong>These are your combat stats, they'll what you'll need to keep track of if you want to survive:</strong></p>
+  <ul>
+    <li><strong>Armor Class</strong>: A measure of how difficult it is to hit your character in combat.</li>
+    <li><strong>Initiative</strong>: A measure of how quickly your character reacts in combat.</li>
+    <li><strong>Speed</strong>: A measure of how far your character can move in a turn.</li>
+    <li><strong>Proficiency Bonus</strong>: A measure of your character's skill in certain areas.</li>
+    <li><strong>Hit Points</strong>: A measure of how much damage your character can take before falling unconscious.</li>
+    <li><strong>Hit Dice</strong>: A measure of your character's ability to recover hit points.</li>
+  </ul>
+</ion-item>
 
 <ion-item>
   <ion-label position="floating">Armor Class</ion-label>
@@ -62,13 +73,26 @@
 </ion-item>
 
 <ion-item>
-  <ion-label position="floating">Max HP</ion-label>
+  <ion-label position="floating"><u>Max HP</u></ion-label>
   <ion-input type="number" formControlName="hitPointMax"></ion-input>
 </ion-item>
 
     <!-- Stats -->
-    <ion-list-header>Stats</ion-list-header>
+    <ion-list-header><u>Stats</u></ion-list-header>
     <div formGroupName="stats">
+
+      <ion-item>
+        <p><strong>These are your core stats, used in nearly every single part of the game for nearly every single situation</strong></p>
+        <ul>
+          <li><strong>Strength</strong>: A measure of your character's physical power.</li>
+          <li><strong>Dexterity</strong>: A measure of your character's agility and reflexes.</li>
+          <li><strong>Constitution</strong>: A measure of your character's health and stamina.</li>
+          <li><strong>Intelligence</strong>: A measure of your character's mental acuity and reasoning.</li>
+          <li><strong>Wisdom</strong>: A measure of your character's perception and insight.</li>
+          <li><strong>Charisma</strong>: A measure of your character's force of personality and charm.</li>
+        </ul>
+      </ion-item>
+
       <!-- Strength -->
       <ion-item>
         <ion-label position="floating">Strength</ion-label>
@@ -126,7 +150,7 @@
 
 
     <!-- Proficiencies -->
-    <ion-list-header>Proficiencies</ion-list-header>
+    <ion-list-header><u>Proficiencies</u></ion-list-header>
     <div formArrayName="proficiencies">
       <div *ngFor="let prof of proficiencies.controls; let i = index">
         <ion-item>
@@ -138,7 +162,7 @@
     </div>
 
     <!-- Inventory -->
-    <ion-list-header>Inventory</ion-list-header>
+    <ion-list-header><u>Inventory</u></ion-list-header>
     <div formArrayName="inventory">
       <div *ngFor="let item of inventory.controls; let i = index">
         <ion-item>
@@ -150,7 +174,7 @@
     </div>
 
     <!-- Spells -->
-    <ion-list-header>Spells</ion-list-header>
+    <ion-list-header><u>Spells</u></ion-list-header>
     <div formArrayName="spells">
       <div *ngFor="let spell of spells.controls; let i = index">
         <ion-item>
@@ -163,8 +187,8 @@
 
     <!-- Backstory -->
     <ion-item>
-      <ion-label position="floating">Backstory</ion-label>
-      <ion-textarea formControlName="backstory"></ion-textarea>
+      <ion-label position="floating"><u>Backstory</u></ion-label>
+      <ion-textarea formControlName="backstory" placeholder="Come up with something dramatic, hillarious or down right silly, its up to you"></ion-textarea>
     </ion-item>
 
     <ion-button expand="block" type="submit" [disabled]="characterForm.invalid">

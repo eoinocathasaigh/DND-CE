@@ -7,13 +7,13 @@
   </ion-toolbar>
 </ion-header>
 
-<!--  -->
 <ion-content class="ion-padding">
+  <ion-card *ngIf="character" class="character-sheet">
 
-  <ion-card *ngIf="character">
+    <!-- Header -->
     <ion-card-header class="character-header">
       <div class="character-sheet-header">
-        <img [src]="character.img || 'assets/img/appLogo.svg'" (error)="onImageError($event)" alt="Character Image" class="character-img"/>        
+        <img [src]="character.img || 'assets/img/appLogo.svg'" (error)="onImageError($event)" alt="Character Image" class="character-img" />
         <div class="character-main-details">
           <ion-card-title>{{ character.name }}</ion-card-title>
           <ion-card-subtitle>{{ character.race }} - {{ character.class }} - Level {{ character.level }}</ion-card-subtitle>
@@ -22,39 +22,63 @@
       </div>
     </ion-card-header>
 
+    <!-- Content -->
     <ion-card-content>
-      <h3>Stats</h3>
-      <div class="stats-grid">
-        <div *ngFor="let stat of ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma']">
-          <strong>{{ stat | titlecase }}:</strong> {{ character.stats[stat] }}
+
+      <!-- Stats -->
+      <div class="section">
+        <h3>Core Stats</h3>
+        <div class="stats-grid">
+          <div class="stat-box" *ngFor="let stat of ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma']">
+            <span class="stat-label">{{ stat | titlecase }}</span>
+            <span class="stat-value">{{ character.stats[stat] }}</span>
+          </div>
         </div>
       </div>
 
-      <h3>Combat Info</h3>
-      <p><strong>Armor Class:</strong> {{ character.armorClass }}</p>
-      <p><strong>Initiative:</strong> {{ character.initiative }}</p>
-      <p><strong>Speed:</strong> {{ character.speed }} ft</p>
-      <p><strong>Hit Points:</strong> {{ character.hitPoints }} / {{ character.hitPointMax }}</p>
-      <p><strong>Hit Dice:</strong> {{ character.hitDice }}</p>
-      <p><strong>Proficiency Bonus:</strong> +{{ character.proficiencyBonus }}</p>
+      <!-- Combat Info -->
+      <div class="section">
+        <h3>Combat Info</h3>
+        <div class="info-grid">
+          <div><strong>Armor Class:</strong> {{ character.armorClass }}</div>
+          <div><strong>Initiative:</strong> {{ character.initiative }}</div>
+          <div><strong>Speed:</strong> {{ character.speed }} ft</div>
+          <div><strong>Hit Points:</strong> {{ character.hitPoints }} / {{ character.hitPointMax }}</div>
+          <div><strong>Hit Dice:</strong> {{ character.hitDice }}</div>
+          <div><strong>Proficiency Bonus:</strong> +{{ character.proficiencyBonus }}</div>
+        </div>
+      </div>
 
-      <h3>Proficiencies</h3>
-      <ul>
-        <li *ngFor="let prof of character.proficiencies">{{ prof }}</li>
-      </ul>
+      <!-- Proficiencies -->
+      <div class="section">
+        <h3>Proficiencies</h3>
+        <ul class="bullet-list">
+          <li *ngFor="let prof of character.proficiencies">{{ prof }}</li>
+        </ul>
+      </div>
 
-      <h3>Inventory</h3>
-      <ul>
-        <li *ngFor="let item of character.inventory">{{ item }}</li>
-      </ul>
+      <!-- Inventory -->
+      <div class="section">
+        <h3>Inventory</h3>
+        <ul class="bullet-list">
+          <li *ngFor="let item of character.inventory">{{ item }}</li>
+        </ul>
+      </div>
 
-      <h3>Spells</h3>
-      <ul>
-        <li *ngFor="let spell of character.spells">{{ spell }}</li>
-      </ul>
+      <!-- Spells -->
+      <div class="section">
+        <h3>Spells</h3>
+        <ul class="bullet-list">
+          <li *ngFor="let spell of character.spells">{{ spell }}</li>
+        </ul>
+      </div>
 
-      <h3>Backstory</h3>
-      <p>{{ character.backstory }}</p>
+      <!-- Backstory -->
+      <div class="section">
+        <h3>Backstory</h3>
+        <p class="backstory-text">{{ character.backstory }}</p>
+      </div>
+
     </ion-card-content>
   </ion-card>
 </ion-content>

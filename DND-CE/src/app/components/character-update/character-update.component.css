@@ -1,0 +1,89 @@
+/* General Content Background */
+ion-content {
+    --background: linear-gradient(to bottom right, #1e1e1e, #2d2d2d);
+    color: #fff;
+  }
+  
+  /* Header */
+  ion-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Form Items */
+  ion-item {
+    --background: #fff;
+    --color: #2c2c2c;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    padding: 4px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  }
+  
+  /* Floating Labels */
+  ion-label {
+    font-size: 0.9em;
+    color: #aaa;
+  }
+  
+  /* Inputs */
+  ion-input, ion-textarea {
+    --color: black;
+    --placeholder-color: #777;
+  }
+  
+  /* Image Preview Styling */
+  img {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Section Headers */
+  ion-list-header {
+    font-size: 1em;
+    font-weight: bold;
+    color: #DC3939;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Buttons */
+  ion-button {
+    --border-radius: 12px;
+    font-weight: 600;
+    margin-top: 12px;
+  }
+  
+  ion-button[color="danger"] {
+    --background: #b00020;
+    --background-hover: #c73232;
+  }
+  
+  /* Add Buttons */
+  ion-button[expand="block"] {
+    margin-top: 8px;
+  }
+  
+  /* Error Messages */
+  ion-text[color="danger"] {
+    font-size: 0.8em;
+    margin-left: 12px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  /* Responsive input spacing */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  /* Optional: textarea height */
+  ion-textarea {
+    min-height: 100px;
+  }
+  
