@@ -35,7 +35,7 @@
         <h2>{{ item.name }}</h2>
         <p *ngIf="item.desc">{{ item.desc }}</p>
 
-        <!-- Additional fields based on category -->
+        <!-- Additional fields based on 2 of the categories - simply to display some additional previously hidden information -->
         <ng-container *ngIf="category === 'spells'">
           <p *ngIf="item.school"><strong>School:</strong> {{ item.school }}</p>
           <p *ngIf="item.level"><strong>Level:</strong> {{ item.level }}</p>

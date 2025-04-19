@@ -7,6 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
+<!--Form for the user to fill in all the relevant information-->
 <ion-content class="ion-padding">
   <form [formGroup]="characterForm" (ngSubmit)="onSubmit()">
 
@@ -77,7 +78,7 @@
   <ion-input type="number" formControlName="hitPointMax"></ion-input>
 </ion-item>
 
-    <!-- Stats -->
+    <!-- Players stats session -->
     <ion-list-header><u>Stats</u></ion-list-header>
     <div formGroupName="stats">
 
@@ -149,6 +150,7 @@
     </div>
 
 
+    <!--The following section allows the user to enter multiple items such as proficiencies or inventory items-->
     <!-- Proficiencies -->
     <ion-list-header><u>Proficiencies</u></ion-list-header>
     <div formArrayName="proficiencies">

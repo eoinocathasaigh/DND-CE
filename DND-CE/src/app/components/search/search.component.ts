@@ -19,10 +19,12 @@ export class SearchComponent {
 
   constructor(private open5e: Open5eService) {}
 
+  //Function to handle searching for different categories
   onSearch() {
     if (!this.category) return;
   
     this.loading = true;
+    //We then call the method in the Open5eService to search for the query in the selected category
     this.open5e.search(this.category as any, this.query).subscribe(response => {
       this.results = response.results;
       this.loading = false;

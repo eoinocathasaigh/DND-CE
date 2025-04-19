@@ -16,7 +16,7 @@ export class CharacterUpdateComponent implements OnInit {
   characterForm: FormGroup;
   character: any;
 
-  // Constructor to initialize the form and inject services
+  // Constructor to initialize the form & its values and inject services
   constructor(private fb: FormBuilder, private characterService: CharacterService, private router: Router, private route: ActivatedRoute) {
     this.characterForm = this.fb.group({
       name: ['', Validators.required],
@@ -77,7 +77,7 @@ export class CharacterUpdateComponent implements OnInit {
     }
   }
 
-  // Helper to access FormArray
+  // Helper to access certain arrays
   get proficiencies() {
     return this.characterForm.get('proficiencies') as FormArray;
   }

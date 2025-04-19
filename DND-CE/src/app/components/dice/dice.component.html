@@ -14,7 +14,7 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- Result Display -->
+  <!-- Result Display -> Initially hidden and is displayed when the result is set-->
   <ion-card *ngIf="result !== null" class="diceResult">
     <ion-card-header>
       <ion-card-title>Result</ion-card-title>
@@ -24,6 +24,7 @@
     </ion-card-content>
   </ion-card>
 
+  <!--Simplistic card to allow the user to choose 1 of 7 dice to roll to get a certain result-->
   <ion-card class="diceSelectCard">
     <ion-card-header>
       <ion-card-title>Select a Dice</ion-card-title>

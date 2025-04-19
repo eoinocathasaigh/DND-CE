@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 export class Open5eService {
   private endpoints = {
     spells: 'https://api.open5e.com/v1/spells/',
-    spelllist: 'https://api.open5e.com/v1/spelllist/',
     monsters: 'https://api.open5e.com/v1/monsters/',
     backgrounds: 'https://api.open5e.com/v1/backgrounds/',
     planes: 'https://api.open5e.com/v1/planes/',
@@ -19,7 +18,6 @@ export class Open5eService {
     classes: 'https://api.open5e.com/v1/classes/',
     magicitems: 'https://api.open5e.com/v1/magicitems/',
     weapons: 'https://api.open5e.com/v1/weapons/',
-    armor: 'https://api.open5e.com/v1/armor/',
   };
 
   constructor(private http: HttpClient) {}

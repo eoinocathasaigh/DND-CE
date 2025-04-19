@@ -11,6 +11,7 @@
     <ion-card-header>
       <ion-card-title><strong>Welcome To the Combat Tracker!</strong></ion-card-title>
     </ion-card-header>
+    <!--Giving a basic explanation of the combat function and what we provide here-->
     <ion-card-content>
       <p>
         Combat is a key part of D&D, where things get intense fast.<br />
@@ -23,14 +24,15 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- Create New Encounter -->
+  <!-- Create New Encounter -> Simply routes the user to the new page to create-->
   <ion-button expand="block" color="success" routerLink="/createCombat" class="create-button">
     <strong>Create a New Encounter!</strong>
   </ion-button>
 
-  <!-- List of Encounters -->
+  <!-- List of Encounters loaded in from the server -->
   <div *ngIf="encounters.length > 0" class="encounter-container">
     <ion-card *ngFor="let encounter of encounters" class="encounter-card">
+      <!--We display some basic information relating to each encounter like the name, the number of fighters etc-->
       <ion-card-header>
         <ion-card-title>{{ encounter.name }}</ion-card-title>
       </ion-card-header>
@@ -39,6 +41,7 @@
           <p>Currently {{encounter.fighters.length}} fighter's locked in combat!</p>
         </ion-item>
 
+        <!--Functions to either play or delete a specific encounter-->
         <div class="button-group">
           <ion-button expand="block" [routerLink]="['/play-encounter', encounter._id]" color="success">
             Play Encounter

@@ -29,6 +29,7 @@ export class CharacterComponent {
     );
   }
 
+  //Function to delete a chatacter from the list & the server
   deleteCharacter(id: string) {
     if (confirm('Are you sure you want to delete this character?')) {
       this.characterService.deleteCharacter(id).subscribe(
@@ -41,6 +42,7 @@ export class CharacterComponent {
     }
   }
 
+  //Simple navigation function for each character 
   editCharacter(id: string) {
     this.router.navigate(['/character-update', id]);
   }

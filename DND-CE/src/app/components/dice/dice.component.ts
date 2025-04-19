@@ -56,7 +56,9 @@ export class DiceComponent implements OnInit, OnDestroy {
     }
   }
 
+  //Method to listen for a shake on the device
   private listenToShake() {
+    //Adding a motion/acceleration listener to check to see if a device is shaken
     Motion.addListener('accel', (event) => {
       const { acceleration } = event;
 
@@ -70,9 +72,11 @@ export class DiceComponent implements OnInit, OnDestroy {
 
       const now = Date.now();
 
+      //We check if the total acceleration is greater than the shake threshold and if the last shake time was more than 1 second ago
+      //If so, we set the last shake time to now and roll the dice
       if (totalAcceleration > this.shakeThreshold && now - this.lastShakeTime > 1000) {
         this.lastShakeTime = now;
-        console.log('Shake detected! 🎲');
+        console.log('Shake detected');
         this.rollDice();
       }
     }).then(listenerHandle => {

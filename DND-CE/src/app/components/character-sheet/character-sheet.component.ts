@@ -16,6 +16,7 @@ export class CharacterSheetComponent  implements OnInit {
 
   constructor( private route: ActivatedRoute, private characterService: CharacterService) {}
   
+  //On initialization, fetch the character data using the id from the route
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {

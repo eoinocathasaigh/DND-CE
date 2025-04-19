@@ -13,6 +13,7 @@ export class FooterComponent {
 
   constructor(private router: Router) {}
 
+  //The following functions are used to navigate to the different pages of the app
   goToDice() {
     this.router.navigate(['/dice']); // if you have a route
   }

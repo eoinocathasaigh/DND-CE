@@ -50,6 +50,7 @@ export class CreateCombatComponent {
       fighters: this.fighters,
     };
 
+    //Using the method from the service to add the encounter to the database
     this.combatService.addCombatEncounter(newEncounter).subscribe({
       next: () => {
         console.log('Encounter created successfully.');

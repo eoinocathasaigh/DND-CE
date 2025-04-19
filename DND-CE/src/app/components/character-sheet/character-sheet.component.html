@@ -1,3 +1,4 @@
+<!--Back Button to return to the previous page-->
 <ion-header>
   <ion-toolbar color="dark">
     <ion-buttons slot="start">
@@ -10,7 +11,7 @@
 <ion-content class="ion-padding">
   <ion-card *ngIf="character" class="character-sheet">
 
-    <!-- Header -->
+    <!-- Displaying the basic details of each character -->
     <ion-card-header class="character-header">
       <div class="character-sheet-header">
         <img [src]="character.img || 'assets/img/appLogo.svg'" (error)="onImageError($event)" alt="Character Image" class="character-img" />
@@ -22,10 +23,8 @@
       </div>
     </ion-card-header>
 
-    <!-- Content -->
     <ion-card-content>
-
-      <!-- Stats -->
+      <!-- Player statistics -->
       <div class="section">
         <h3>Core Stats</h3>
         <div class="stats-grid">
