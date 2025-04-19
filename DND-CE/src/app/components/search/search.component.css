@@ -1,0 +1,124 @@
+/* General Styling for the Content */
+ion-content {
+    --background: lightgrey;  /* Light background to give a soft contrast */
+    padding: 10px;
+  }
+  
+  /* Style the search bar */
+  ion-item {
+    margin-bottom: 20px;
+    background-color: #ffffff;  /* White background for inputs */
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Soft shadow for input fields */
+  }
+  
+  /* Style the input field */
+  ion-input {
+    --background: #f5f5f5;  /* Light gray background */
+    --border-radius: 8px;  /* Rounded corners */
+    --padding-start: 12px;
+    --padding-end: 12px;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 70%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);  /* Soft shadow around the input */
+  }
+  
+  /* Style for the Search Button */
+  ion-button {
+    --background: #3880ff;  /* Primary blue button */
+    --color: white;
+    --border-radius: 8px;
+    font-weight: bold;
+    padding: 10px 20px;
+    width: 25%;
+  }
+  
+  /* Spinner Style */
+  ion-spinner {
+    margin: 20px auto;
+    display: block;
+  }
+  
+  /* Results Styling */
+  ion-list {
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+  
+  /* Style for individual items in the list */
+  ion-item {
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  ion-item:hover {
+    transform: scale(1.02);  /* Slight zoom effect on hover */
+  }
+  
+  /* Label Styling for Results */
+  ion-label h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;  /* Dark gray text for names */
+    margin-bottom: 8px;
+  }
+  
+  ion-label p {
+    font-size: 14px;
+    color: #555555;  /* Lighter gray text for descriptions */
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  
+  /* Style for additional fields (spells, weapons, etc.) */
+  ion-label ng-container p {
+    font-size: 14px;
+    color: #666666;
+    margin: 6px 0;
+  }
+  
+  /* Add a bit of space between different categories (spells, weapons) */
+  ion-label ng-container {
+    margin-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* Style the dropdown (ion-select) */
+  ion-select {
+    --background: #f5f5f5;  /* Light background for dropdown */
+    --border-radius: 8px;
+    --padding-start: 12px;
+    --padding-end: 12px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  /* Styling for the category selection dropdown */
+  ion-select .select-text {
+    color: #666666;
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    ion-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    ion-input, ion-button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    ion-button {
+      width: 100%;
+    }
+  }
+    

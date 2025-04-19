@@ -17,4 +17,10 @@
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
+
+<script>
+  if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register("/serviceworker.js");
+  }
+ </script>
 </html>

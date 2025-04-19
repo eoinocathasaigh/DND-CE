@@ -10,7 +10,6 @@ export class Open5eService {
     spells: 'https://api.open5e.com/v1/spells/',
     spelllist: 'https://api.open5e.com/v1/spelllist/',
     monsters: 'https://api.open5e.com/v1/monsters/',
-    documents: 'https://api.open5e.com/v1/documents/',
     backgrounds: 'https://api.open5e.com/v1/backgrounds/',
     planes: 'https://api.open5e.com/v1/planes/',
     sections: 'https://api.open5e.com/v1/sections/',
