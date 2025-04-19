@@ -53,7 +53,9 @@ export class CreateCombatComponent {
     this.combatService.addCombatEncounter(newEncounter).subscribe({
       next: () => {
         console.log('Encounter created successfully.');
-        this.router.navigate(['/combat']); // Navigate back to the combat tracker page
+        this.router.navigate(['/combat']).then(() => {
+          window.location.reload();
+        }) // Navigate back to the combat tracker page
       },
       error: (err) => console.error('Error creating encounter:', err),
     });

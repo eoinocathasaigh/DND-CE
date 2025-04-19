@@ -97,7 +97,9 @@ export class PlayCombatComponent implements OnInit {
     };
 
     this.http.put(`http://localhost:5000/api/CombatTracker/${this.id}`, updatedEncounter).subscribe({
-      next: () => this.router.navigate(['/combat']),
+      next: () => this.router.navigate(['/combat']).then(() => {
+        window.location.reload();
+      }),
       error: (err) => console.error('Error saving encounter:', err)
     });
   }
