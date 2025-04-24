@@ -59,8 +59,8 @@
       "description": "Roll a Dice.",
       "icons": [
         {
-        "src": "icons/appLogo.svg",
-        "sizes": "150x150"
+        "src": "icons/icon-152x152.png",
+        "sizes": "152x152"
         }
       ]
     },
@@ -70,8 +70,8 @@
       "description": "Manage Combat.",
       "icons": [
         {
-        "src": "icons/appLogo.svg",
-        "sizes": "150x150"
+        "src": "icons/icon-152x152.png",
+        "sizes": "152x152"
         }
       ]
     },
@@ -81,8 +81,8 @@
       "description": "Character Sheet.",
       "icons": [
         {
-        "src": "icons/appLogo.svg",
-        "sizes": "150x150"
+        "src": "icons/icon-152x152.png",
+        "sizes": "152x152"
         }
       ]
     }
@@ -130,22 +130,5 @@
       "sizes": "426x919",
       "form_factor": "narrow"
     }    
-  ],
-  
-
-  "widgets": [
-    {
-      "name": "PWAmp mini player",
-      "description": "widget to control the PWAmp music player",
-      "tag": "pwamp",
-      "template": "pwamp-template",
-      "ms_ac_template": "widgets/mini-player-template.json",
-      "data": "widgets/mini-player-data.json",
-      "type": "application/json",
-      "screenshots": [ { "src": "./screenshot-widget.png", "sizes": "600x400", "label": "The PWAmp mini-player widget" } ],
-      "icons": [ { "src": "./favicon-16.png", "sizes": "16x16" } ],
-      "auth": false,
-      "update": 86400
-    }
   ]
 }

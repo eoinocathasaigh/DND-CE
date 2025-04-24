@@ -75,16 +75,16 @@ export class CharacterSheetMakerComponent {
 
       // Add the character data to the database using the CharacterService
       this.characterService.addCharacter(characterData).subscribe(
-        (response) => {
-          console.log('Character created successfully!', response);
-          this.router.navigate(['/character']).then(() => {
-            window.location.reload();
-          });
-        },
-        (error) => {
-          console.error('Error creating character', error);
-        }
+          (response) => {
+              console.log('Character created successfully!', response);
+              this.router.navigate(['/character']).then(() => {
+                  window.location.reload();
+              });
+          },
+          (error) => {
+              console.error('Error creating character', error);
+          }
       );
-    }
+  }
   }
 }
