@@ -13,43 +13,43 @@
       "src": "icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "icons/icon-96x96.png",
       "sizes": "96x96",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "icons/icon-128x128.png",
       "sizes": "128x128",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "icons/icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "icons/icon-152x152.png",
       "sizes": "152x152",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     }
   ],
   "shortcuts": [
@@ -89,38 +89,45 @@
   ],
   "screenshots": [
     {
-      "name": "Home",
-      "src": "/image/home.png",
+      "name": "Home 1",
+      "src": "/image/home1.png",
       "type": "image/png",
-      "sizes": "540x720",
+      "sizes": "423x915",
       "form_factor": "narrow"
+    },
+    {
+      "name": "Home 2",
+      "src": "/image/home2.png",
+      "type": "image/png",
+      "sizes": "1898x1099",
+      "form_factor": "wide"
     },
     {
       "name": "Dice",
       "src": "/image/dice.png",
       "type": "image/png",
-      "sizes": "540x720",
+      "sizes": "426x917",
       "form_factor": "narrow"
     },
     {
       "name": "Combat",
       "src": "/image/combat.png",
       "type": "image/png",
-      "sizes": "540x720",
+      "sizes": "428x920",
       "form_factor": "narrow"
     },
     {
       "name": "Character",
       "src": "/image/character.png",
       "type": "image/png",
-      "sizes": "540x720",
+      "sizes": "419x917",
       "form_factor": "narrow"
     },
     {
       "name": "Search",
       "src": "/image/search.png",
       "type": "image/png",
-      "sizes": "540x720",
+      "sizes": "426x919",
       "form_factor": "narrow"
     }    
   ],

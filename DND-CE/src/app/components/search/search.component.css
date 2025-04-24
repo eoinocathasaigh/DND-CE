@@ -55,6 +55,7 @@ ion-content {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 15px;
     transition: transform 0.2s ease-in-out;
+    color: #333333;  /* Dark gray text for better readability */
   }
   
   ion-item:hover {
