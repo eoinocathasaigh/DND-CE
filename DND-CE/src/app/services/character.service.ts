@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { NotificationService } from './notification.service';
-import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +35,6 @@ export class CharacterService {
   addCharacter(newCharacter: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, newCharacter).pipe(
       tap((response) => {
-        console.log('API Response:', response); // Debugging
-
         // Trigger notification
         this.notificationService.sendNotification(
           'New Character Created',
