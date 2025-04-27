@@ -9,7 +9,6 @@ This Project been made Angular, Node.js and Ionic for the Front-End and Mongodb 
 * Download the .zip folder ([DND-CD]https://github.com/eoinocathasaigh/DND-CE/archive/refs/heads/main.zip) and extract/decompress the folder
 
 --------------------------------------------------------------------------
-* Working in Progress 
 ## Running Project
 ### Setup
 * First go into countries-geo-guessing-assignment folder - `cd DND-CE` <br>
@@ -18,7 +17,7 @@ This Project been made Angular, Node.js and Ionic for the Front-End and Mongodb 
 * Run This Command to start Client-Side - `ng serve` <br>
 * This will start the Client-Side at - `http://localhost:4200/` <br>
 ### Server
-* First go into BackEnd folder - `cd BackEnd` <br>
+* First go into BackEnd folder - `cd DND-CE/BackEnd` <br>
 * Run This Command to start Server - `nodemon server.js` <br>
 * This will start the Server at  `http://localhost:5000/` <br>
 
